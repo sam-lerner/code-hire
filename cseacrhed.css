@@ -163,6 +163,7 @@ align-items: center;
   background-color: #f7f7f7;
   border-radius: 20px;
   box-shadow: 4px 4px 8px ;}
+  
  
  .cardj p{
       font-family: 'Futura', sans-serif;
@@ -176,6 +177,8 @@ align-items: center;
     margin-left: 800px;
     margin-top: -59px;
   }
-  .apply-button{
-    margin-left: 300px;
-  }
+   .apply-button{
+    margin-right: -30px;
+    text-align: right; /* or */
+    float: right;
+  } 

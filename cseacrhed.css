@@ -26,7 +26,8 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 30vh;
+    height: 10vh;
+    
   }
   
   .search-container form {
@@ -146,75 +147,35 @@ nav a.all-jobs:hover {
 }
 
 .cards-containerj {
-  display: flex;
 
-    flex-wrap: wrap;
-    justify-content: center;
-    margin-top: 10px;
-    margin-left: 50px;
+align-items: center;
+    margin-top: 20px;
+    margin-right: -100px;
 }
 
 .cardj {
   
-  width: 30%;
-  padding: 20px;
-  margin: 5px;
-  margin-left: 30px;
-  margin-right: 30px;
-  background-color: #f7f7f7;
-  border-radius: 10px;
-  box-shadow: 2px 2px 4px ;}
-  .cards {
-    display: flex;
-    justify-content: center;
-    margin-top: 30px;
-    margin-left: -30px;
-  }
+  width: 60%;
+  padding: 40px;
+  margin: 10px;
+  margin-left: 250px;
   
-  .card {
-    /* margin-top: 50px; */
-
-    width: 25%; 
-    padding: 100px;
-    margin: 10px ;
-    margin-top: -70px;
-    background-color: #f7f7f7;
-    border-radius: 5px;
-    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2),
-    0px 10px 20px 0px rgba(0,0,0,0.2);
-  }
-  input[type="text"],
-input[type="email"],
-input[type="password"] {
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 2px solid #ccc;
-    border-radius: 4px;
-    font-size: 16px;
-}
-
-input[type="submit"] {
-    background-color: #4CAF50;
-    color: white;
-    padding: 14px 20px;
-    margin: 8px 0;
-    border: none;
-    border-radius: 4px;
-    cursor: pointer;
-    font-size: 16px;
-}
-.center {
-  text-align: center;
-  position: relative;
-  top: -50px;
-  margin-right: 40px;
-}
-.recentPostings{
-  font-family: 'Futura', sans-serif;
-  font-size: 24px;
+  background-color: #f7f7f7;
+  border-radius: 20px;
+  box-shadow: 4px 4px 8px ;}
+ 
+ .cardj p{
+      font-family: 'Futura', sans-serif;
+  font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
   color: #0084ff;
   text-shadow: 2px 2px #ccc;
-}
+ }
+  .d{
+    margin-left: 800px;
+    margin-top: -59px;
+  }
+  .apply-button{
+    margin-left: 300px;
+  }

@@ -26,7 +26,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 60vh;
+    height: 30vh;
   }
   
   .search-container form {
@@ -115,4 +115,69 @@ input[type="submit"] {
     cursor: pointer;
     font-size: 16px;
 }
-  
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  background-color: #444;
+}
+
+nav a.job-reviews:hover {
+  animation: job-reviews 0.3s ease-in-out;
+}
+
+nav a.profile:hover {
+  animation: profile 0.3s ease-in-out;
+}
+
+nav a.all-jobs:hover {
+  animation: all-jobs 0.3s ease-in-out;
+}
+
+@keyframes job-reviews {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes profile {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes all-jobs {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}

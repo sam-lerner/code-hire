@@ -14,6 +14,8 @@
   
   .review-header img {
     width: 30%;
+    box-shadow: 10px 10px 5px #888888;
+    transform: scale(1.1);
   }
   
   
@@ -172,8 +174,10 @@ nav a.all-jobs:hover {
       flex-wrap: wrap;
       justify-content: center;
       margin-top: 50px;
-      margin-left: 250px;
-  }
+      margin-left: 270px;
+  
+    }
+
   
   .cardj {
     
@@ -186,7 +190,10 @@ nav a.all-jobs:hover {
     margin-right: 30px;
     background-color: #1e90ff;
     border-radius: 10px;
-    box-shadow: 1px 1px 2px ;}
+    /* box-shadow: 1px 1px 2px ; */
+    box-shadow: 10px 10px 5px #888888;
+    transform: scale(1.1);}
+
     
     
     .carda {
@@ -227,6 +234,7 @@ nav a.all-jobs:hover {
         border: solid #0c0c0c; /* Add this line to add double style border of 5px and blue color */
     margin-left: 50px;
         height: 400px;
+        
       }
       
       .review-card h2 {
@@ -237,10 +245,22 @@ nav a.all-jobs:hover {
       
       .review-card label {
         font-weight: bold;
+        font-size: 17px;
+        color: #333;
+        font-family: Arial, sans-serif;
+        margin-bottom: 4px;
       }
       
       .review-card textarea {
-        width: 100%;
+        width: 90%;
+        height: 150px;
+        font-size: 16px;
+        color: #333;
+        font-family: Arial, sans-serif;
+        text-align:center;
+        padding: 5px;
+        margin-bottom: 10px;
+        resize: none;
       }
       
       .review-card button[type="submit"] {

@@ -11,6 +11,10 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        job_title: {
+            type: DataTypes.TEXT,
+            allowNull: false,
+        },
         comment: {
             type: DataTypes.TEXT,
             allowNull: false,

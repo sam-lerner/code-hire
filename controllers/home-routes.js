@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const { Job,JobQualification, UserQualification, User } = require('../models');
 
+// GET data from Job table, render them through homepage.handlebar
 router.get('/', async (req, res) => {
     try {
         const jobData = await Job.findAll()
@@ -16,6 +17,16 @@ router.get('/', async (req, res) => {
         res.status(500).json(err);
     };
 });
+
+// GET conditional login page through href in main.handlebar
+router.get('/login', (req, res) => {
+    if (req.session.loggedIn) {
+        res.redirect('/');
+        return;
+      }
+    res.render('login');
+});
+
 
 // router.get('/', async (req, res) => {
 //   try {

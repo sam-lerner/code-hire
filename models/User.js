@@ -45,7 +45,7 @@ User.init(
         },
         profile: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: true,
         },
         is_employer: {
             type: DataTypes.BOOLEAN,

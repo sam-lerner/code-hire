@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registry</title>
-  <link rel="stylesheet" href="/public/css/jass.css">
+  <link rel="stylesheet" href="/css/jass.css">
 </head>
 <div class="top-bar">
   <div class="top-bar-left">
@@ -13,16 +13,15 @@
       <li class="menu-text">CodeHire</li>
     </ul>
   </div>
-  <div class="top-bar-right">
-    <ul class="menu">
-        {{#if logged_in}}
-      <li><a href="#">Logout</a></li>
-{{else }}
-<li><a href="#">Login/Create Account</a></li>
-<li>Profile</li>"</li>
-{{/if}}   
-    </ul>
-  </div>
+  <nav class="top-bar-right">
+
+    {{#if loggedIn}}
+    <button id="logout">Logout</button>
+    {{else}}
+    <a href="/login">Login</a>
+    {{/if}}
+
+  </nav>
 </div>
 <nav>
   <ul>
@@ -38,6 +37,11 @@
     <button type="submit">Search</button>
   </form>
 </div>
+<main>
   {{{ body }}}
+</main>
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+{{/if}}
 
 </html>

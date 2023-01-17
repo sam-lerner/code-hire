@@ -43,6 +43,13 @@ User.init(
                 isUrl: true,
             }
         },
+        linkedin_link: {
+            type: DataTypes.STRING,
+            allowNull: true,
+            validate: {
+                isUrl: true,
+            }
+        },
         profile: {
             type: DataTypes.TEXT,
             allowNull: true,

@@ -170,7 +170,7 @@ align-items: center;
   font-size: 20px;
   text-transform: uppercase;
   letter-spacing: 3px;
-  color: #0084ff;
+  color: #ff0000;
   text-shadow: 2px 2px #ccc;
  }
   .d{
@@ -181,4 +181,5 @@ align-items: center;
     margin-right: -30px;
     text-align: right; /* or */
     float: right;
+    
   } 

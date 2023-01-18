@@ -31,15 +31,18 @@ Job.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        publisher_id: {
+        user_id: {
             type: DataTypes.INTEGER,
-            allowNull: true,
+            allowNull: false,
             references: {
                 model: 'user',
                 key: 'id',
             },
         },
+<<<<<<< HEAD
 
+=======
+>>>>>>> main
     },
     {
         sequelize,

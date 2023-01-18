@@ -1,0 +1,231 @@
+/* Add some basic styling */
+  body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-color: #f1f1f1;
+  }
+  
+  /* Top Navigation Bar */
+  
+  .top-bar {
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+  }
+  
+  .top-bar a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  
+  
+  .search-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 30vh;
+  }
+  
+  .search-container form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: 50px;
+  }
+  
+  .search-container input[type="text"] {
+    padding: 12px 30px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
+  
+  .search-container button[type="submit"] {
+    width: 100px;
+    background-color: #1e90ff;
+    color: #fff;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+  }
+  
+  .search-container button[type="submit"]:hover {
+    background-color: #00bfff;
+  }
+  .menu-text {
+    font-size: 2rem; 
+    position: relative;
+    font-family: 'Kalam', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing:4px; 
+    color: rgb(0, 0, 0);
+   list-style-type: none;
+   text-shadow: 0 0 10px #fff; 
+   animation: glowing 1s ease-in-out infinite; 
+ }
+ 
+ /* animation keyframes */
+ @keyframes glowing {
+   0% { text-shadow: 0 0 10px rgba(129, 8, 8, 0.788); }
+   50% { text-shadow: 0 0 20px rgb(109, 10, 10); }
+   100% { text-shadow: 0 0 10px rgb(136, 15, 15); }
+  }
+  
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  background-color: #444;
+}
+
+nav a.job-reviews:hover {
+  animation: job-reviews 0.3s ease-in-out;
+}
+
+nav a.profile:hover {
+  animation: profile 0.3s ease-in-out;
+}
+
+nav a.all-jobs:hover {
+  animation: all-jobs 0.3s ease-in-out;
+}
+
+@keyframes job-reviews {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes profile {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes all-jobs {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 400px;
+    height: 400px;
+    margin-top: -100px;
+    margin-left: 30px;
+}
+
+.card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    border-radius: 5px 5px 0 0;
+    width: 100%;
+}
+
+.card-body {
+    padding: 2px 16px;
+    margin-left: 120px;
+}
+
+.card-title {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+.card-text {
+    font-size: 0.9rem;
+    margin-bottom: 10px;
+}
+
+.btnrm {
+    background-color: #337ab7;
+    color: white;
+    border-radius: 5px;
+    padding: 5px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9rem;
+    margin-top: 250px;
+   
+}
+.job-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 850px;
+    height: 800px;
+     margin-top: -350px;
+    margin-left: 540px; 
+    text-align: center;
+  
+    
+}
+.job-card p{
+    margin-top: 80px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    
+  }
+  
+  footer p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #ccc;
+  }

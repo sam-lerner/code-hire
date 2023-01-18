@@ -17,14 +17,16 @@ JobQualification.init(
             references: {
                 model: 'qualification',
                 key: 'id',
+                unique: false,
             },
         },
-        applicant_id: {
+        job_id: {
             type: DataTypes.INTEGER,
             allowNull: false,
             references: {
                 model: 'job',
                 key: 'id',
+                unique: false,
             },
         },
     },

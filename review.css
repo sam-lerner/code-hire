@@ -2,7 +2,7 @@
 .review-container {
     width: 80%;
     margin: 0 auto;
-    margin-top: -200px;
+    margin-top: -220px;
     margin-right: 320px;
     
   }
@@ -197,19 +197,21 @@ nav a.all-jobs:hover {
     
     
     .carda {
-        width: 700px;
+        width: 500px;
         height: 300px;
         box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2);
         transition: 0.3s;
         border-radius: 5px;
         margin: 0 auto;
-        margin-top: -280px;
+        margin-top: -250px;
+    
       }
       
 
       
       .card-bodya {
         padding: 20px;
+       
       }
       
       .card-bodya h1 {
@@ -232,13 +234,14 @@ nav a.all-jobs:hover {
         width: 350px;
         margin-top: -290px;
         border: solid #0c0c0c; /* Add this line to add double style border of 5px and blue color */
-    margin-left: 50px;
+    margin-left: 30px;
         height: 400px;
         
       }
       
       .review-card h2 {
         margin-bottom: 20px;
+        text-align: center;
       }
       
       
@@ -253,7 +256,7 @@ nav a.all-jobs:hover {
       
       .review-card textarea {
         width: 90%;
-        height: 150px;
+        height: 190px;
         font-size: 16px;
         color: #333;
         font-family: Arial, sans-serif;
@@ -261,6 +264,9 @@ nav a.all-jobs:hover {
         padding: 5px;
         margin-bottom: 10px;
         resize: none;
+        border-radius: 10px;
+        border: solid 1px #ccc;
+        
       }
       
       .review-card button[type="submit"] {
@@ -271,6 +277,30 @@ nav a.all-jobs:hover {
         border-radius: 4px;
         cursor: pointer;
         float: right;
+      }
+      .review-card input[type="text"], .review-card textarea {
+        border-radius: 10px;
+    }
+      footer {
+        background-color: #333;
+        color: #fff;
+        padding: 20px 0;
+        margin-top: auto;
+      }
+      
+      footer p {
+        text-align: center;
+        font-size: 0.9rem;
+        margin-bottom: 0;
+      }
+      
+      footer a {
+        color: #fff;
+        text-decoration: none;
+      }
+      
+      footer a:hover {
+        color: #ccc;
       }
      
       

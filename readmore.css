@@ -193,3 +193,39 @@ nav a.all-jobs:hover {
     margin-top: 250px;
    
 }
+.job-card {
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    transition: 0.3s;
+    border-radius: 5px;
+    width: 850px;
+    height: 800px;
+     margin-top: -350px;
+    margin-left: 540px; 
+    text-align: center;
+  
+    
+}
+.job-card p{
+    margin-top: 80px;
+}
+footer {
+    background-color: #333;
+    color: #fff;
+    padding: 20px 0;
+    
+  }
+  
+  footer p {
+    text-align: center;
+    font-size: 0.9rem;
+    margin-bottom: 0;
+  }
+  
+  footer a {
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  footer a:hover {
+    color: #ccc;
+  }

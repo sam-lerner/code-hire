@@ -17,16 +17,18 @@ JobQualification.init(
             references: {
                 model: 'qualification',
                 key: 'id',
+                unique: false,
             },
         },
-        // job_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'job',
-        //         key: 'id',
-        //     },
-        // },
+        job_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'job',
+                key: 'id',
+                unique: false,
+            },
+        },
     },
     {
         sequelize,

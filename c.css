@@ -33,10 +33,11 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-left: 50px;
   }
   
   .search-container input[type="text"] {
-    padding: 12px 20px;
+    padding: 12px 30px;
     margin: 8px 0;
     box-sizing: border-box;
     border: 2px solid #ccc;
@@ -158,14 +159,17 @@ nav a.all-jobs:hover {
   
   width: 30%;
   padding: 20px;
-  margin: 10px;
+  margin: 5px;
+  margin-left: 30px;
+  margin-right: 30px;
   background-color: #f7f7f7;
   border-radius: 10px;
   box-shadow: 2px 2px 4px ;}
   .cards {
     display: flex;
     justify-content: center;
-    margin-top: 100px;
+    margin-top: 30px;
+    margin-left: -30px;
   }
   
   .card {
@@ -174,6 +178,7 @@ nav a.all-jobs:hover {
     width: 25%; 
     padding: 100px;
     margin: 10px ;
+    margin-top: -70px;
     background-color: #f7f7f7;
     border-radius: 5px;
     box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2),
@@ -199,4 +204,18 @@ input[type="submit"] {
     border-radius: 4px;
     cursor: pointer;
     font-size: 16px;
+}
+.center {
+  text-align: center;
+  position: relative;
+  top: -50px;
+  margin-right: 40px;
+}
+.recentPostings{
+  font-family: 'Futura', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #0084ff;
+  text-shadow: 2px 2px #ccc;
 }

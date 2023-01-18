@@ -27,6 +27,17 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
+router.get('/profile', (req, res) => {
+    if(!req.session.loggedIn) {
+        res.redirect('/');
+        return;
+    }
+    res.render('profile', {loggedIn: req.session.loggedIn});
+})
+// router.get('/profile', (req, res) => {
+//     res.render('profile');
+// });
+
 
 // router.get('/', async (req, res) => {
 //   try {
@@ -95,15 +106,5 @@ router.get('/login', (req, res) => {
 //   }
 // });
 
-// router.get('/login-createacount', (req, res) => {
-//   // If the user is already logged in, redirect the request to another route
-//   if (req.session.logged_in) {
-//     res.redirect('/profile');
-//     return;
-//     //else create acount redirect to create acount 
-//   }
-
-//   res.render('login-createacount');
-// });
 
 module.exports = router;

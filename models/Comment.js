@@ -11,6 +11,13 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
+        post_id: {
+            type: DataTypes.INTEGER,
+            references: {
+                model: 'job',
+                key: 'id',
+            }
+        },
         job_title: {
             type: DataTypes.TEXT,
             allowNull: false,
@@ -27,14 +34,6 @@ Comment.init(
                 key: 'id',
             },
         },
-        // job_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'job',
-        //         key: 'id',
-        //     },
-        // },
     },
     {
         sequelize,

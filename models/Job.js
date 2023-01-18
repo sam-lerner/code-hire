@@ -31,14 +31,14 @@ Job.init(
             type: DataTypes.STRING,
             allowNull: false,
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id',
-        //     },
-        // },
+        publisher_id: {
+            type: DataTypes.INTEGER,
+            allowNull: true,
+            references: {
+                model: 'user',
+                key: 'id',
+            },
+        },
 
     },
     {

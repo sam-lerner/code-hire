@@ -1,4 +1,18 @@
 <div>
+    <nav>
+        <ul>
+            <li><a href="#" class="job-reviews">Job Reviews</a></li>
+            {{#if loggedIn}} <li><a href="/profile" class="profile">Profile</a></li> {{/if}}
+            <li><a href="#" class="all-jobs">All Jobs</a></li>
+        </ul>
+    </nav>
+    <div class="search-container">
+        <form>
+            <input type="text" placeholder="Job Title" name="job-title">
+            <input type="text" placeholder="Location" name="location">
+            <button type="submit">Search</button>
+        </form>
+    </div>
     <div>
         <h2>Job Listings</h2>
         {{#each jobs as |job|}}

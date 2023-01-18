@@ -19,14 +19,14 @@ JobQualification.init(
                 key: 'id',
             },
         },
-        // job_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'job',
-        //         key: 'id',
-        //     },
-        // },
+        applicant_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'job',
+                key: 'id',
+            },
+        },
     },
     {
         sequelize,

@@ -26,7 +26,8 @@ Qualification.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'qualification',
-    }
+    },
+
 );
 
 module.exports = Qualification

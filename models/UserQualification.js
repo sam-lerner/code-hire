@@ -17,16 +17,18 @@ UserQualification.init(
             references: {
                 model: 'qualification',
                 key: 'id',
+                unique: false,
             },
         },
-        // user_id: {
-        //     type: DataTypes.INTEGER,
-        //     allowNull: false,
-        //     references: {
-        //         model: 'user',
-        //         key: 'id',
-        //     },
-        // },
+        user_id: {
+            type: DataTypes.INTEGER,
+            allowNull: false,
+            references: {
+                model: 'user',
+                key: 'id',
+                unique: false,
+            },
+        },
     },
     {
         sequelize,

@@ -7,9 +7,36 @@
     <link rel="stylesheet" href="./profile.css">
   </head>
   <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">CodeHire</li>
+          
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="#">Login/Create Account</a></li>
+        </ul>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="job-reviews">Job Reviews</a></li>
+        <li><a href="#" class="profile">Profile</a></li>
+        <li><a href="#" class="all-jobs">All Jobs</a></li>
+      </ul>
+    </nav>
+  </div>
+    <div class="search-container">
+      <form>
+        <input type="text" placeholder="Job Title" name="job-title">
+        <input type="text" placeholder="Location" name="location">
+        <button type="submit">Search</button>
+      </form> </div>
     <div class="container">
       <h1>My Profile</h1>
-      <form>
+      <form class="profile-form">
         <div class="form-group">
           <label for="name">Name</label>
           <input type="text" id="name" value="John Smith">
@@ -67,8 +94,24 @@
        
         
         <button type="submit">Save Changes</button>
-      </form>
+      </form >
     </div>
     </div>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <p>@2023 CODEHIRE</p>
+            </div>
+            <div class="col-4">
+              <p>Creators: Sam.Lerner Connor.Bottone Justin.Yi Adam Aronson </p>
+            </div>
+            <div class="col-4">
+              <p><a href="#">Contact Us</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
   </body>
 </html>

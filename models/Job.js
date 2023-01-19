@@ -39,10 +39,6 @@ Job.init(
                 key: 'id',
             },
         },
-<<<<<<< HEAD
-
-=======
->>>>>>> main
     },
     {
         sequelize,

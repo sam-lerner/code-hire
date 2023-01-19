@@ -48,3 +48,20 @@ button {
     padding: 10px;
     width: 100%;
 }
+.form-group #skills {
+    display: block;
+    width: 100%;
+
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+    cursor: pointer;
+}
+
+
+
+#resume {
+    height: 150px;
+    width: 100%;
+    resize: none;
+}

@@ -11,8 +11,8 @@ body {
     margin: 0 auto;
     max-width: 600px;
     padding: 20px;
-    margin-left: 50px;
-    margin-top: -450px;
+    margin-left: 0px;
+    margin-top: -750px;
 }
 
 .profile-form {
@@ -245,4 +245,11 @@ nav a.all-jobs:hover {
     border: 1px solid #ddd;
   }
   
- 
+  .postJob {
+    background-color: blue;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 5px;
+    text-align: center;
+    cursor: pointer;
+  }

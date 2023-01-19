@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registry</title>
+    <link rel="stylesheet" href="./profile.css">
+  </head>
+  <body>
+    <div class="top-bar">
+      <div class="top-bar-left">
+        <ul class="menu">
+          <li class="menu-text">CodeHire</li>
+          
+        </ul>
+      </div>
+      <div class="top-bar-right">
+        <ul class="menu">
+          <li><a href="#">Login/Create Account</a></li>
+        </ul>
+      </div>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="#" class="job-reviews">Job Reviews</a></li>
+        <li><a href="#" class="profile">Profile</a></li>
+        <li><a href="#" class="all-jobs">All Jobs</a></li>
+      </ul>
+    </nav>
+  </div>
+    <div class="search-container">
+      <form>
+        <input type="text" placeholder="Job Title" name="job-title">
+        <input type="text" placeholder="Location" name="location">
+        <button type="submit">Search</button>
+      </form> </div>
+    <div class="container">
+      <h1>My Profile</h1>
+      <form class="profile-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" value="John Smith">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" value="john.smith@example.com">
+        </div>
+         <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="********">
+        </div>
+        
+            <br>
+            <div class="form-group">
+                <label for="github">GitHub</label>
+                <input type="url" id="github" placeholder="https://github.com/username">
+            </div>
+            <div class="form-group">
+                <label for="linkedin">LinkedIn</label>
+                <input type="url" id="linkedin" placeholder="https://www.linkedin.com/in/username">
+            </div>
+            <div class="form-group">
+              <label>Skills</label>
+              <div>
+                  <input type="checkbox" id="javascript" name="skills" value="javascript">
+                  <label for="javascript">JavaScript</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="python" name="skills" value="python">
+                  <label for="python">Python</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="c++" name="skills" value="c++">
+                  <label for="c++">C++</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="php" name="skills" value="php">
+                  <label for="php">PHP</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="sql" name="skills" value="sql">
+                  <label for="sql">SQL</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="other" name="skills" value="other">
+                  <label for="other">Other</label>
+              </div>
+          </div>
+        
+            <div class="form-group">
+                <label for="resume">Resume</label>
+                <textarea id="resume" rows="8" cols="80"></textarea>
+            </div>
+       
+        
+        <button type="submit">Save Changes</button>
+      </form >
+    </div>
+    </div>
+      <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-4">
+              <p>@2023 CODEHIRE</p>
+            </div>
+            <div class="col-4">
+              <p>Creators: Sam.Lerner Connor.Bottone Justin.Yi Adam Aronson </p>
+            </div>
+            <div class="col-4">
+              <p><a href="#">Contact Us</a></p>
+            </div>
+          </div>
+        </div>
+      </footer>
+    
+  </body>
+</html>

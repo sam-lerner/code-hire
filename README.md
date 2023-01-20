@@ -17,7 +17,7 @@
 
 This application is a site for coders looking for jobs, and employers to find potential new employees. New users are able to create a profile. Upon creation, they are prompted to select whether they are looking for work or looking to hire. Depending on which option they select, users will be able to either search for jobs or find employees by skill. In addition, users are able to share feedback on job postings, providing helpful information for other potential applicants.
 
-This project was created as a part of the Rutgers University Full-Stack Coding Bootcamp.
+This project was created as a part of the Rutgers University Full-Stack Coding Bootcamp. Technologies used in this project include `HTML5`, `CSS`, `JavaScript`, `MySQL`, `sequelize`, `Express.js` and `Handlebars.js`. 
 
 ## Installation
 

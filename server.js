@@ -23,7 +23,15 @@ const sess = {
   })
 };
 
+<<<<<<< HEAD
 //insert from slack
+=======
+// Logger for methods received
+app.use((req, res, next) => {
+  console.log(`💩 ${req.method} request received on endpoint ${req.url}`);
+  next();
+});
+>>>>>>> main
 
 app.use(session(sess));
 

@@ -13,7 +13,7 @@ const loginFormHandler = async (event) => {
       });
   
       if (response.ok) {
-        document.location.replace('/');
+        document.location.replace('/edit');
       } else {
         // console.log(err);
         alert('Failed to log in.');
@@ -27,16 +27,18 @@ const signupFormHandler = async (event) => {
   const username = document.querySelector('#create-username').value.trim();
   const email = document.querySelector('#create-email').value.trim();
   const password = document.querySelector('#create-password').value.trim();
+  const is_employer = document.querySelector('#employerCheck:checked') ? true : false;
+ 
 
   if(username && email && password) {
     const response = await fetch('/api/users', {
       method: 'POST',
-      body: JSON.stringify({ username, email, password }),
+      body: JSON.stringify({ username, email, password, is_employer }),
       headers: {'Content-Type': 'application/json'},
     });
 
     if (response.ok) {
-      document.location.replace('/');
+      document.location.replace('/edit');
     } else {
       alert('failed to sign up');
     }

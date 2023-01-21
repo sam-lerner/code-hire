@@ -6,6 +6,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>User Registry</title>
   <link rel="stylesheet" href="/css/jass.css">
+  <link rel="stylesheet" href="/css/style.css">
 </head>
 <div class="top-bar">
   <div class="top-bar-left">
@@ -23,13 +24,38 @@
 
   </nav>
 </div>
-
-
+<nav>
+  <ul>
+    <li><a href="#" class="profile">Profile</a></li>
+    <li><a href="#" class="all-jobs">All Jobs</a></li>
+  </ul>
+</nav>
+<div class="search-container">
+  <form>
+    <input type="text" placeholder="Job Title" name="job-title">
+    <input type="text" placeholder="Location" name="location">
+    <button type="submit">Search</button>
+  </form>
+</div>
 <main>
   {{{ body }}}
 </main>
 {{#if loggedIn}}
 <script src="/js/logout.js"></script>
 {{/if}}
-
+<footer>
+    <div class="container">
+      <div class="row">
+        <div class="col-4">
+          <p>@2023 CODEHIRE</p>
+        </div>
+        <div class="col-4">
+          <p>Creators: Sam.Lerner Connor.Bottone Justin.Yi Adam Aronson </p>
+        </div>
+        <div class="col-4">
+          <p><a href="#">Contact Us</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
 </html>

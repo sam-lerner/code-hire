@@ -17,7 +17,7 @@ Qualification.init(
         },
         description: {
             type: DataTypes.TEXT,
-            allowNull: false,
+            allowNull: true,
         },
     },
     {
@@ -26,7 +26,8 @@ Qualification.init(
         freezeTableName: true,
         underscored: true,
         modelName: 'qualification',
-    }
+    },
+
 );
 
 module.exports = Qualification

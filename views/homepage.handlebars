@@ -1,40 +1,19 @@
 {{#each (slice array 0 3)}}
     
 
+<link rel="stylesheet" href="./c.css">
+<div>
+    <div>
+        <h2>Job Listings</h2>
+        {{#each jobs as |job|}}
+        <div class="cards-containerj">
+            <div class="cardj">
+                <h2>{{job.title}}</h2>
+                <p>{{job.location}}</p>
+                <p>{{job.salary_range}}</p>
+            </div>
+        </div>
+        {{/each}}
+
+    </div>
 </div>
-    <div class="cards-containerj">
-      <div class="cardj">
-        <h2>{{job.title}}</h2>
-        <p>Company Name</p>
-        <p>Location{{job.location}}</p>
-        <p>Job Description{{job.category}}salary{{job.salary_range}}</p>
-        <a href="#" class="apply-button">Apply</a>
-      </div>
-      {{/each}}
-{{!-- </div>
-    <div class="cards-containerj">
-      <div class="cardj">
-        <h2>{{job.title}}</h2>
-        <p>Company Name</p>
-        <p>Location{{job.location}}</p>
-        <p>Job Description{{job.category}}salary{{job.salary_range}}</p>
-        <a href="#" class="apply-button">Apply</a>
-      </div>
-      </div>
-    <div class="cards-containerj">
-      <div class="cardj">
-        <h2>{{job.title}}</h2>
-        <p>Company Name</p>
-        <p>Location{{job.location}}</p>
-        <p>Job Description{{job.category}}salary{{job.salary_range}}</p>
-        <a href="#" class="apply-button">Apply</a>
-      </div>
-      </div>
-    <div class="cards-containerj">
-      <div class="cardj">
-        <h2>{{job.title}}</h2>
-        <p>Company Name</p>
-        <p>Location{{job.location}}</p>
-        <p>Job Description{{job.category}}salary{{job.salary_range}}</p>
-        <a href="#" class="apply-button">Apply</a> --}}
-      {{!-- </div> --}}

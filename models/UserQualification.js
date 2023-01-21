@@ -17,6 +17,7 @@ UserQualification.init(
             references: {
                 model: 'qualification',
                 key: 'id',
+                unique: false,
             },
         },
         user_id: {
@@ -25,6 +26,7 @@ UserQualification.init(
             references: {
                 model: 'user',
                 key: 'id',
+                unique: false,
             },
         },
     },

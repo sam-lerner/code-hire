@@ -17,6 +17,7 @@ JobQualification.init(
             references: {
                 model: 'qualification',
                 key: 'id',
+                unique: false,
             },
         },
         job_id: {
@@ -25,6 +26,7 @@ JobQualification.init(
             references: {
                 model: 'job',
                 key: 'id',
+                unique: false,
             },
         },
     },

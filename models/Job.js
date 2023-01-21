@@ -39,7 +39,6 @@ Job.init(
                 key: 'id',
             },
         },
-
     },
     {
         sequelize,

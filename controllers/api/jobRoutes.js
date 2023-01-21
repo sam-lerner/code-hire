@@ -1,5 +1,5 @@
 const router = require('express').Router();
-const { Job, User, Comment } = require ('../../models');
+const { Job, User, Comment } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // GET all jobs
@@ -57,9 +57,11 @@ router.get('/:id', async (req, res) => {
 // GET all jobs that match search criteria
 router.get('/', async (req, res) => {
     try {
+        const { title, location } = req.query;
         const results = await Job.findAll({
             where: {
-                title: req.params.title
+                title: { [Op.like]: `%${title}%` },
+                location: { [Op.like]: `%${location}%` }
             },
             include: [
                 {
@@ -75,9 +77,13 @@ router.get('/', async (req, res) => {
                 },
             ],
         })
-        res.status(200).json(allJobs);
-    } catch (err) {
-        res.status(500).json(err)
+        // res.status(200).json(results);
+        res.render('employeeSearchresults', {
+            results
+        })
+    } catch (err){
+        res.status(500).json(err);
     }
 });
+
 module.exports = router;

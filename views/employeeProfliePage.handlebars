@@ -1,0 +1,67 @@
+ <link rel="stylesheet" href="./profile.css">
+  <div class="container">
+      <h1>My Profile</h1>
+      <form class="profile-form">
+        <div class="form-group">
+          <label for="name">Name</label>
+          <input type="text" id="name" value="{{User.username}}">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" value="{{User.email}}">
+        </div>
+         <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" placeholder="********">
+        </div>
+        
+            <br>
+            <div class="form-group">
+                <label for="github">GitHub</label>
+                <input type="url" id="github" placeholder="{{User.github_link}}">
+            </div>
+            <div class="form-group">
+                <label for="linkedin">LinkedIn</label>
+                <input type="url" id="linkedin" placeholder="{{User.linkedin_link}}">
+            </div>
+            <div class="form-group">
+              <label>Skills</label>
+              <div>
+                  <input type="checkbox" id="javascript" name="skills" value="javascript">
+                  <label for="javascript">JavaScript</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="python" name="skills" value="python">
+                  <label for="python">Python</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="c++" name="skills" value="c++">
+                  <label for="c++">C++</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="php" name="skills" value="php">
+                  <label for="php">PHP</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="sql" name="skills" value="sql">
+                  <label for="sql">SQL</label>
+              </div>
+              <div>
+                  <input type="checkbox" id="other" name="skills" value="other">
+                  <label for="other">Other</label>
+              </div>
+          </div>
+        
+            <div class="form-group">
+                <label for="resume">Resume</label>
+                <textarea id="resume" rows="8" cols="80"></textarea>
+            {{#if User.prifle}}
+            {{User.profle}}
+            {{/if}}
+            </div>
+       
+        
+        <button type="submit">Save Changes</button>
+      </form >
+    </div>
+    </div>

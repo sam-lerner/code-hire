@@ -1,0 +1,69 @@
+ <link rel="stylesheet" href="./review.css">
+ <div class="review-container">
+    <h1>Company Name</h1>
+    <div class="review-header">
+      <img src="./img/placeholder.jpg" alt="Company Image">
+    </div>
+</div>
+    
+    <div class="carda">
+    
+        <div class="card-bodya">
+          <h1>{{User.username}}</h1>
+          <p>{{User.profile}}</p>
+          <h2>Contact Information:</h2>
+          <ul>
+            <li>Address: 123 Main St, Anytown USA</li>
+            <li>Phone: 555-555-5555</li>
+            <li>{{User.email}}</li>
+          </ul>
+          
+          </div>
+        </div>
+      </div>
+    <div class="cards-containerj">
+       {{#each (slice Comment 0 2)}}
+        <div class="cardj">
+          <h2>{{User.username}}</h2>
+          <p>Positon</p>
+          <p>{{Comment.comment}}</p>
+          <p>
+          <a href="#" class="read-button">Read more</a></p>
+        </div>
+        {{/each}}
+        {{!-- <div class="cardj">
+          <h2>Employee name</h2>
+          <p>Positon</p>
+          <p>Review</p>
+          <p>
+          <a href="#" class="read-button">Read more</a></p>
+        </div>
+        <div class="cardj">
+          <h2>Employee name</h2>
+          <p>Positon</p>
+          <p>Review</p>
+          <p>
+          <a href="#" class="apply-button">Read more</a></p>
+        </div> --}}
+      </div> 
+    </div>
+  </body>
+  <div class="review-card">
+    <h2>WRITE REVIEW</h2>
+    <form>
+      <div class="form-group">
+        <label for="name">Name:</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div class="form-group">
+        <label for="name">Position:</label>
+        <input type="text" id="Position" name="Position" required>
+      </div>
+      <div class="form-group">
+        <label for="review">Review:</label>
+          
+        <textarea id="review" name="review" rows="4" required></textarea>
+      <button type="submit">Submit</button>
+    </div>
+    </form>
+</div>

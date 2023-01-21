@@ -1,28 +1,49 @@
-   <div class="cards">
-      <div class="card">
-        <h2>Login</h2>
-        <form class="login-form">
-          <label for="email-login">Username/Email</label>
-          <input type="text" id="email-login">
-          <label for="password-login">Password</label>
-          <input type="password" id="password-login">
-          <input type="submit" value="Submit">
-        </form>
-      </div>
-    
-      <div class="card">
-        <h2>Create Account</h2>
-        <form class="signup-form">
-          <label for="username">Username</label>
-          <input type="text" id="create-username" name="username">
-          <label for="email">Email</label>
-          <input type="email" id="create-email" name="email">
-          <label for="password">Password</label>
-          <input type="password" id="create-password" name="password">
-          <label for="password-confirm">Confirm Password</label>
-          <input type="password" id="password-confirm" name="password-confirm">
-          <button type="submit"> Sign Up </button>
-      </div>
+   <nav>
+    <ul>
+      <a href="/"><li>Home</li></a>
+    </ul>
+   </nav>
+   
+ <div class="cards">
+    <div class="card">
+      <h2>Login</h2>
+      <form class="login-form">
+        <label for="email-login">Email</label>
+        <input type="text" id="email-login">
+        <label for="password-login">Password</label>
+        <input type="password" id="password-login">
+        {{!-- <input type="submit" value="Submit"> --}}
+        <button type="submit">Login</button>
+      </form>
     </div>
+  
+    <div class="card">
+      <h2>Create Account</h2>
+      <form class="signup-form">
+        <label for="create-username">Username</label>
+        <input type="text" id="create-username" name="username">
+        <label for="create-email">Email</label>
+        <input type="email" id="create-email" name="email">
+        <label for="password">Password</label>
+        <input type="password" id="create-password" name="password">
+        {{!-- <label for="password-confirm">Confirm Password</label>
+        <input type="password" id="password-confirm" name="password-confirm"> --}}
+        
+        <div class="form-group">
+          <label>Account Type</label>
+          <div>
+              <input type="checkbox" id="employerCheck" name="account-type" value="true">
+              <label for="employee">Employer</label>
+          </div>
+          {{!-- <div>
+              <input type="radio" id="employer" name="account-type" value="employer">
+              <label for="employer">Employer</label>
+          </div> --}}
+          {{!-- <input type="submit" value="Submit"> --}}
+          <button type="submit">Sign Up</button>
+        </div>
+      </form>
+    </div>
+  </div>
 
-    <script src="./js/login.js"></script>
+  <script src="./js/login.js"></script>

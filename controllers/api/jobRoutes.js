@@ -44,13 +44,40 @@ router.get('/:id', async (req, res) => {
                 },
             ],
         })
-        if (!onePost) {
+        if (!oneJob) {
             res.status(404).json({ message: 'No job found with that id!' })
             return
         }
         res.status(200).json(oneJob);
     } catch (err) {
         res.status(500).json(err);
+    }
+});
+
+// GET all jobs that match search criteria
+router.get('/', async (req, res) => {
+    try {
+        const results = await Job.findAll({
+            where: {
+                title: req.params.title
+            },
+            include: [
+                {
+                    model: Comment,
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    },
+                },
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        })
+        res.status(200).json(allJobs);
+    } catch (err) {
+        res.status(500).json(err)
     }
 });
 module.exports = router;

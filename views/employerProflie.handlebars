@@ -1,0 +1,72 @@
+ <link rel="stylesheet" href="./employerprofile.css">
+ <div class="active-postings">
+                <h2>Active Postings</h2>
+                {{#if Job}}
+                <div class="cardT-container">
+                    {{#each (slice Job 0 3)}}
+                  <div class="cardT">
+                    <h3>{{Job.title}}</h3>
+                    <p>{{Job.body}}</p>
+                  </div>
+                  {{/each}}
+                 {{/if}}
+                </div>
+                <div class="new-posting">
+                    <h2>Create a new posting</h2>
+                    <form>
+                        <label for="job-title">Job Title</label>
+                        <input type="text" id="job-title" name="job-title">
+                    
+                        <label for="job-description">Job Description</label>
+                        <textarea id="job-description" name="job-description"></textarea>
+                    
+                        <label for="salary-range">Salary Range</label>
+                        <input type="text" id="salary-range" name="salary-range">
+                    
+                        <label for="job-category">Job Category</label>
+                        <select id="job-category" name="job-category">
+                          <option value="" disabled selected>Select a category</option>
+                          <option value="IT">IT</option>
+                          <option value="Finance">Finance</option>
+                          <option value="Engineering">Engineering</option>
+                          <option value="Marketing">Marketing</option>
+                          <option value="Sales">Sales</option>
+                        </select>
+                    
+                        <label for="job-location">Job Location</label>
+                        <input type="text" id="job-location" name="job-location">
+                    
+                        <input class="postJob" type="submit" value="Post Job">
+                    </form>
+              </div></div>
+    <div class="container">
+      <h1>My Profile</h1>
+      <form class="profile-form">
+        <div class="form-group">
+          <label for="name">Company Name</label>
+          <input type="text" id="name" value="John Smith{{Useer.username}}">
+        </div>
+        <div class="form-group">
+          <label for="email">Email</label>
+          <input type="email" id="email" value="john.smith@example.com{{User.email}}">
+        </div>
+         
+            <br>
+            <div class="form-group">
+                <label for="companySite">Company Webpage</label>
+                <input type="url" id="companySite" placeholder="https://Yourcompanyswebpage">
+            </div>
+           
+            
+        
+            <div class="form-group">
+                <label for="resume">About us</label>
+                <textarea id="resume" rows="8" cols="80"></textarea>
+                 {{#if User.profile}}
+            {{User.profile}}
+            {{/if}}
+            </div> 
+            <button type="submit">Save Changes</button>
+      </form >
+    </div>
+    

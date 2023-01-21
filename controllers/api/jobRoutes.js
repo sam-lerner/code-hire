@@ -1,6 +1,6 @@
 const router = require('express').Router();
 const { Job, User, Comment } = require ('../../models');
-const withAuth = require('../../utils/auth');
+// const withAuth = require('../../utils/auth');
 
 // GET all jobs
 router.get('/', async (req, res) => {
@@ -53,3 +53,4 @@ router.get('/:id', async (req, res) => {
         res.status(500).json(err);
     }
 });
+module.exports = router;

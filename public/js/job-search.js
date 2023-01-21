@@ -23,7 +23,7 @@ const jobSearchFormHandler = async (event) => {
     });
 
     if (response.ok) {
-        document.location.replace('/jobs')
+        document.location.replace('/job')
     } else {
         alert(response.statusText);
         document.querySelector('#jobsearch-form').style.display = 'block';

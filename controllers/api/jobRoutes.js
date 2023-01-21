@@ -58,6 +58,7 @@ router.get('/:id', async (req, res) => {
 router.get('/', async (req, res) => {
     try {
         const { title, location } = req.query;
+        console.log(req.query)
         const results = await Job.findAll({
             where: {
                 title: { [Op.like]: `%${title}%` },

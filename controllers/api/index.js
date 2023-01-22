@@ -7,5 +7,6 @@ const userRoutes = require('./user-routes');
 router.use('/users', userRoutes);
 // router.use('./edit', profileRoutes);
 
+router.use('/jobs', jobRoutes);
 
 module.exports = router;

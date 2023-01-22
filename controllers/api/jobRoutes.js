@@ -3,28 +3,28 @@ const { Job, User, Comment } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // GET all jobs
-router.get('/', async (req, res) => {
-    try {
-        const allJobs = await Job.findAll({
-            include: [
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
-        })
-        res.status(200).json(allJobs);
-    } catch (err) {
-        res.status(500).json(err)
-    }
-});
+// router.get('/', async (req, res) => {
+//     try {
+//         const allJobs = await Job.findAll({
+//             include: [
+//                 {
+//                     model: Comment,
+//                     include: {
+//                         model: User,
+//                         attributes: ['username'],
+//                     },
+//                 },
+//                 {
+//                     model: User,
+//                     attributes: ['username'],
+//                 },
+//             ],
+//         })
+//         res.status(200).json(allJobs);
+//     } catch (err) {
+//         res.status(500).json(err)
+//     }
+// });
 
 // GET one job
 router.get('/:id', async (req, res) => {
@@ -55,7 +55,7 @@ router.get('/:id', async (req, res) => {
 });
 
 // GET all jobs that match search criteria
-router.get('/', async (req, res) => {
+router.get('/?title=...&location=...', async (req, res) => {
     try {
         const { title, location } = req.query;
         console.log(req.query)
@@ -63,26 +63,19 @@ router.get('/', async (req, res) => {
             where: {
                 title: { [Op.like]: `%${title}%` },
                 location: { [Op.like]: `%${location}%` }
-            },
-            include: [
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
-        })
-        // res.status(200).json(results);
-        res.render('employeeSearchresults', {
-            results
-        })
-    } catch (err){
+            }
+        });
+
+        // Handle the search results
+        if (results.length === 0) {
+            alert("No jobs found matching your search criteria");
+        } else {
+            // Render the search results to the page
+            res.render('employeeSearchresults', {
+                results
+            });
+        }
+    } catch (err) {
         res.status(500).json(err);
     }
 });

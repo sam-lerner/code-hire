@@ -33,13 +33,14 @@
     <li><a href="#" class="all-jobs">All Jobs</a></li>
   </ul>
 </nav>
-<div class="search-container">
+{{!-- Commented out due to search being on homepage.handlebars --}}
+{{!-- <div class="search-container">
   <form class="job-search">
     <input type="text" placeholder="Job Title" id='title' name="job-title">
     <input type="text" placeholder="Location" id='location' name="location">
     <button type="submit">Search</button>
   </form>
-</div>
+</div> --}}
 <main>
   {{{ body }}}
 </main>
@@ -50,7 +51,7 @@
           <p>@2023 CODEHIRE</p>
         </div>
         <div class="col-4">
-          <p>Creators: Sam.Lerner Connor.Bottone Justin.Yi Adam Aronson </p>
+          <p>Creators: Adam Aronson, Connor Bottone, Sam Lerner and Justin Yi </p>
         </div>
         <div class="col-4">
           <p><a href="#">Contact Us</a></p>
@@ -62,6 +63,6 @@
 <script src="/js/logout.js"></script>
 
 {{/if}}
-  <script src="/js/job-search.js"></script>
+{{!-- <script src="/js/job-search.js"></script> --}}
   </body>
 </html>

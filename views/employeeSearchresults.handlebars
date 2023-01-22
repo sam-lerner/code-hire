@@ -1,16 +1,35 @@
   <link rel="stylesheet" href="/css/cseacrhed.css">
- {{#each (slice Job 0 8)}}
+{{#if results.length}}
+{{#each results}}
+  <div class="cards-containerj">
+    <div class="cardj">
+      <h2>{{title}}</h2>
+      <p>{{location}}</p>
+      <p class="d">Job Description
+        <a href="#" class="apply-button">Apply</a>
+      </p>
+    </div>
+  {{/each}}
+  {{else}}
+  <h1>Your search returned no results. Please try again!</h1>
+{{/if}}
+
+
+
+
+ {{!-- {{#each (slice Job 0 8)}}
     
 
  <div class="cards-containerj">
       <div class="cardj">
         <h2>{{results.title}}</h2>
-        {{!-- <p>{{User.username}}</p> --}}
+        <p>{{User.username}}</p>
         <p>{{results.location}}</p>
         <p class="d">Job Description
         <a href="#" class="apply-button">Apply</a></p>
       </div>
       {{/each}}
+       --}}
       {{!-- <div class="cardj">
         <h2>Job Title</h2>
         <p>Company Name</p>

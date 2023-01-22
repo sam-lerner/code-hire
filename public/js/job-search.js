@@ -9,7 +9,7 @@ const jobSearchFormHandler = async (event) => {
     }
     if (location) {
         if (queryString !== '') {
-            queryString += '&';
+            queryString += '&'
         }
         queryString += `location=${location}`;
     }
@@ -17,7 +17,7 @@ const jobSearchFormHandler = async (event) => {
     console.log(queryString)
     const response = await fetch(url);
     if (response.ok) {
-     document.location.replace()
+        window.location.replace(url)
     } else {
         alert(response.statusText);
     }

@@ -3,28 +3,28 @@ const { Job, User, Comment } = require('../../models');
 // const withAuth = require('../../utils/auth');
 
 // GET all jobs
-// router.get('/', async (req, res) => {
-//     try {
-//         const allJobs = await Job.findAll({
-//             include: [
-//                 {
-//                     model: Comment,
-//                     include: {
-//                         model: User,
-//                         attributes: ['username'],
-//                     },
-//                 },
-//                 {
-//                     model: User,
-//                     attributes: ['username'],
-//                 },
-//             ],
-//         })
-//         res.status(200).json(allJobs);
-//     } catch (err) {
-//         res.status(500).json(err)
-//     }
-// });
+router.get('/', async (req, res) => {
+    try {
+        const allJobs = await Job.findAll({
+            include: [
+                {
+                    model: Comment,
+                    include: {
+                        model: User,
+                        attributes: ['username'],
+                    },
+                },
+                {
+                    model: User,
+                    attributes: ['username'],
+                },
+            ],
+        })
+        res.status(200).json(allJobs);
+    } catch (err) {
+        res.status(500).json(err)
+    }
+});
 
 // GET one job
 router.get('/:id', async (req, res) => {
@@ -55,29 +55,42 @@ router.get('/:id', async (req, res) => {
 });
 
 // GET all jobs that match search criteria
-router.get('/?title=...&location=...', async (req, res) => {
-    try {
-        const { title, location } = req.query;
-        console.log(req.query)
-        const results = await Job.findAll({
-            where: {
-                title: { [Op.like]: `%${title}%` },
-                location: { [Op.like]: `%${location}%` }
-            }
-        });
+// router.get('/', async (req, res) => {
+//     try {
+//         const { jobTitle, jobLocation } = req.query;
+//         console.log(req.query)
+//         const results = await Job.findAll({
+//             where: {
+//                 title: { [Op.like]: `%${jobTitle}%` },
+//                 location: { [Op.like]: `%${jobLocation}%` }
+//             }
+//         });
 
-        // Handle the search results
-        if (results.length === 0) {
-            alert("No jobs found matching your search criteria");
-        } else {
-            // Render the search results to the page
-            res.render('employeeSearchresults', {
-                results
-            });
-        }
+//         // Handle the search results
+//         if (results.length === 0) {
+//             alert("No jobs found matching your search criteria");
+//         } else {
+//             // Render the search results to the page
+//            res.json(results);
+//         }
+//     } catch (err) {
+//         res.status(500).json(err);
+//     }
+// });
+
+router.get('/search', async (req, res) => {
+    try {
+      // retrieve the title from the query string
+      const title = req.query.title;
+      // query the database for jobs with matching title
+      const results = await Job.findAll({
+        where: { title: { [Op.like]: `%${title}%` } }
+      });
+      res.json(results);
     } catch (err) {
-        res.status(500).json(err);
+      res.status(500).json(err);
     }
-});
+  });
+  
 
 module.exports = router;

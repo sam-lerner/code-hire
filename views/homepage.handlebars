@@ -1,7 +1,8 @@
-{{#each (slice array 0 3)}}
-    
+{{!-- {{#each (slice array 0 3)}}
 
-<link rel="stylesheet" href="./c.css">
+{{/each}} --}}
+{{!--
+<link rel="stylesheet" href="./c.css"> --}}
 <div>
     <nav>
         <ul>
@@ -10,14 +11,15 @@
             <li><a href="#" class="all-jobs">All Jobs</a></li>
         </ul>
     </nav>
-    <div class="search-container">
-        <form>
-            <input type="text" placeholder="Job Title" name="job-title">
-            <input type="text" placeholder="Location" name="location">
-            <button type="submit">Search</button>
+    {{!-- <div class="search-container">
+        <form class="job-search">
+            <input type="text" placeholder="Job Title" id="title" name="job-title">
+            <input type="text" placeholder="Location" id="location" name="location">
+            <button type="submit" class="btn">Search</button>
         </form>
-    </div>
-    <div>
+    </div> --}}
+
+    {{!-- <div>
         <h2>Job Listings</h2>
         {{#each jobs as |job|}}
         <div class="cards-containerj">
@@ -29,5 +31,6 @@
         </div>
         {{/each}}
 
-    </div>
+    </div> --}}
 </div>
+{{!-- <script src="/js/job-search.js"></script> --}}

@@ -4,7 +4,7 @@ const { Job,JobQualification, UserQualification, User } = require('../models');
 // GET data from Job table, render them through homepage.handlebar
 // router.get('/', async (req, res) => {
 //     try {
-//         const jobData = await job.findAll()
+//         const jobData = await post.findAll()
 
 //         const jobs = jobData.map((job) => 
 //             job.get({plain: true})

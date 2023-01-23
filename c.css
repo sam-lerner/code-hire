@@ -219,3 +219,24 @@ input[type="submit"] {
   color: #0084ff;
   text-shadow: 2px 2px #ccc;
 }
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  margin-bottom: 50px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ccc;
+}

@@ -1,42 +1,14 @@
-  <link rel="stylesheet" href="./profile.css">
-  
-  <div class="top-bar">
-      <div class="top-bar-left">
-        <ul class="menu">
-          <li class="menu-text">CodeHire</li>
-          
-        </ul>
-      </div>
-      <div class="top-bar-right">
-        <ul class="menu">
-          <li><a href="#">Login/Create Account</a></li>
-        </ul>
-      </div>
-    </div>
-    <nav>
-      <ul>
-        <li><a href="#" class="job-reviews">Job Reviews</a></li>
-        <li><a href="#" class="profile">Profile</a></li>
-        <li><a href="#" class="all-jobs">All Jobs</a></li>
-      </ul>
-    </nav>
-  </div>
-    <div class="search-container">
-      <form>
-        <input type="text" placeholder="Job Title" name="job-title">
-        <input type="text" placeholder="Location" name="location">
-        <button type="submit">Search</button>
-      </form> </div>
-    <div class="container">
+ <link rel="stylesheet" href="./profile.css">
+  <div class="container">
       <h1>My Profile</h1>
       <form class="profile-form">
         <div class="form-group">
           <label for="name">Name</label>
-          <input type="text" id="name" value="John Smith">
+          <input type="text" id="name" value="{{User.username}}">
         </div>
         <div class="form-group">
           <label for="email">Email</label>
-          <input type="email" id="email" value="john.smith@example.com">
+          <input type="email" id="email" value="{{User.email}}">
         </div>
          <div class="form-group">
           <label for="password">Password</label>
@@ -46,11 +18,11 @@
             <br>
             <div class="form-group">
                 <label for="github">GitHub</label>
-                <input type="url" id="github" placeholder="https://github.com/username">
+                <input type="url" id="github" placeholder="{{User.github_link}}">
             </div>
             <div class="form-group">
                 <label for="linkedin">LinkedIn</label>
-                <input type="url" id="linkedin" placeholder="https://www.linkedin.com/in/username">
+                <input type="url" id="linkedin" placeholder="{{User.linkedin_link}}">
             </div>
             <div class="form-group">
               <label>Skills</label>
@@ -83,6 +55,9 @@
             <div class="form-group">
                 <label for="resume">Resume</label>
                 <textarea id="resume" rows="8" cols="80"></textarea>
+            {{#if User.profile}}
+            {{User.profile}}
+            {{/if}}
             </div>
        
         
@@ -90,4 +65,3 @@
       </form >
     </div>
     </div>
-      

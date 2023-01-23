@@ -13,7 +13,7 @@ const jobSearchFormHandler = async (event) => {
         }
         queryString += `location=${location}`;
     }
-    const url = `/api/job?${queryString}`;
+    const url = `/api/job/search?${queryString}`;
     console.log(queryString)
     const response = await fetch(url);
     if (response.ok) {

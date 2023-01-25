@@ -18,9 +18,9 @@ const sess = {
   cookie: {},
   resave: false,
   saveUninitialized: true,
-  store: new SequelizeStore({
-    db: sequelize
-  })
+  // store: new SequelizeStore({
+  //   db: sequelize
+  // })
 };
 
 // Logger for methods received
@@ -33,6 +33,8 @@ app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);
 app.set('view engine', 'handlebars');
+
+
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

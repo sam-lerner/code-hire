@@ -1,7 +1,7 @@
 
- <link rel="stylesheet" href="./c.css">   
+ <link rel="stylesheet" href="/css/c.css">   
 <div class="search-container">
-  <form>
+  {{!-- <form>
     <input type="text" placeholder="Job Title" name="job-title">
     <input type="text" placeholder="Location" name="location">
     <button type="submit">Search</button>
@@ -14,7 +14,7 @@
             <li><a href="#" class="job-reviews">Job Reviews</a></li>
             {{#if loggedIn}} <li><a href="/profile" class="profile">Profile</a></li> {{/if}}
             <li><a href="#" class="all-jobs">All Jobs</a></li>
-        </ul>
+        </ul> --}}
     </nav>
     <div class="search-container">
         <form>
@@ -25,7 +25,7 @@
     </div>
     <div>
         <h2>Job Listings</h2>
-        {{#each Jobs as |job|}}
+        {{#each jobsFour as |job|}}
         <div class="cards-containerj">
             <div class="cardj">
                 <h2>{{job.title}}</h2>
@@ -36,4 +36,5 @@
         {{/each}}
 
     </div>
-</div>
+
+<script

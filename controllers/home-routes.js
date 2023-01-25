@@ -1,25 +1,13 @@
 const router = require('express').Router();
 const { Job,JobQualification, UserQualification, User } = require('../models');
 
+function logRoutingInfo(req,res,next) {
+    console.log(`${req.method} ${req.url}`);
+    next();
+}
+
 // GET data from Job table, render them through homepage.handlebar
-router.get('/', async (req, res) => {
-    try {
-        const jobData = await post.findAll()
-
-        const jobs = jobData.map((job) => 
-            job.get({plain: true})
-        );
-
-        console.log(jobs);
-        res.render('homepage', {jobs, loggedIn: req.session.loggedIn});
-    } catch (err) {
-        console.log(err);
-        res.status(500).json(err);
-    };
-});
-
-
-router.get('/', async (req, res) => {
+router.get('/', logRoutingInfo, async (req, res) => {
     try {
         const jobData = await Job.findAll()
 
@@ -28,15 +16,37 @@ router.get('/', async (req, res) => {
         );
 
         console.log(jobs);
-        res.render('homepage', {jobs, loggedIn: req.session.loggedIn});
+        const jobsFour = jobs.filter((jobs,index)=>{
+            console.log(index)
+            return index < 4;
+        })
+        console.log(jobsFour)
+        res.render('homepage', {jobsFour, loggedIn: req.session.loggedIn});
     } catch (err) {
         console.log(err);
         res.status(500).json(err);
     };
 });
 
+
+// router.get('/', async (req, res) => {
+//     try {
+//         const jobData = await Job.findAll()
+
+//         const jobs = jobData.map((job) => 
+//             job.get({plain: true})
+//         );
+
+//         console.log(jobs);
+//         res.render('homepage', {jobs, loggedIn: req.session.loggedIn});
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     };
+// });
+
 // GET conditional login page through href in main.handlebar
-router.get('/login', (req, res) => {
+router.get('/login',logRoutingInfo, (req, res) => {
     if (req.session.loggedIn) {
         res.redirect('/');
         return;
@@ -44,7 +54,7 @@ router.get('/login', (req, res) => {
     res.render('login');
 });
 
-router.get('/edit', (req, res) => {
+router.get('/edit',logRoutingInfo, (req, res) => {
     // if(!req.session.loggedIn) {
     //     res.redirect('/');
     //     return;

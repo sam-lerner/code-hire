@@ -4,18 +4,18 @@ const editProfile = async (event) => {
     const name = document.querySelector('#name').value.trim();
     const email = document.querySelector('#email').value.trim();
     const password = document.querySelector('#password').value.trim();
-    const github = document.querySelector('#github').value.trim();
-    const linkedin = document.querySelector('#linkedin').value.trim();
+    const github_link = document.querySelector('#github').value.trim();
+    const linkedin_link = document.querySelector('#linkedin').value.trim();
     const resume = document.querySelector('#resume').value.trim();
 
-    const response = await fetch ('/api/users/edit', {
+    const response = await fetch ('/api/edit', {
         method: 'PUT',
         body: JSON.stringify({
             name,
             email,
             password,
-            github,
-            linkedin,
+            github_link,
+            linkedin_link,
             resume
         }),
         headers: {'Content-Type': 'application/json'},

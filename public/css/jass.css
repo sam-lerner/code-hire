@@ -61,3 +61,185 @@ body {
   .search-container button[type="submit"]:hover {
     background-color: #00bfff;
   }
+
+  /* Below is copied from c.css */
+  .menu-text {
+    font-size: 2rem; 
+    position: relative;
+    font-family: 'Kalam', sans-serif; 
+    text-transform: uppercase; 
+    letter-spacing:4px; 
+    color: rgb(0, 0, 0);
+   list-style-type: none;
+   text-shadow: 0 0 10px #fff; /* add a white glow */
+   animation: glowing 1s ease-in-out infinite; /* add animation */
+ }
+ 
+ /* animation keyframes */
+ @keyframes glowing {
+   0% { text-shadow: 0 0 10px rgba(129, 8, 8, 0.788); }
+   50% { text-shadow: 0 0 20px rgb(109, 10, 10); }
+   100% { text-shadow: 0 0 10px rgb(136, 15, 15); }
+  }
+  
+nav {
+  background-color: #333;
+  color: #fff;
+}
+
+nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+}
+
+nav li {
+  flex: 1;
+  text-align: center;
+}
+
+nav a {
+  display: block;
+  padding: 15px;
+  text-decoration: none;
+  color: inherit;
+}
+
+nav a:hover {
+  background-color: #444;
+}
+
+nav a.job-reviews:hover {
+  animation: job-reviews 0.3s ease-in-out;
+}
+
+nav a.profile:hover {
+  animation: profile 0.3s ease-in-out;
+}
+
+nav a.all-jobs:hover {
+  animation: all-jobs 0.3s ease-in-out;
+}
+
+@keyframes job-reviews {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes profile {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+@keyframes all-jobs {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+.cards-containerj {
+  display: flex;
+
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    margin-left: 50px;
+}
+
+.cardj {
+  
+  width: 30%;
+  padding: 20px;
+  margin: 5px;
+  margin-left: 30px;
+  margin-right: 30px;
+  background-color: #f7f7f7;
+  border-radius: 10px;
+  box-shadow: 2px 2px 4px ;}
+  .cards {
+    display: flex;
+    justify-content: center;
+    margin-top: 30px;
+    margin-left: -30px;
+  }
+  
+  .card {
+    /* margin-top: 50px; */
+
+    width: 25%; 
+    padding: 100px;
+    margin: 10px ;
+    margin-top: -70px;
+    background-color: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0px 5px 15px 0px rgba(0, 0, 0, 0.2),
+    0px 10px 20px 0px rgba(0,0,0,0.2);
+  }
+  input[type="text"],
+input[type="email"],
+input[type="password"] {
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+input[type="submit"] {
+    background-color: #4CAF50;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+.center {
+  text-align: center;
+  position: relative;
+  top: -50px;
+  margin-right: 40px;
+}
+.recentPostings{
+  font-family: 'Futura', sans-serif;
+  font-size: 24px;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: #0084ff;
+  text-shadow: 2px 2px #ccc;
+}
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px 0;
+  margin-bottom: 50px;
+}
+
+footer p {
+  text-align: center;
+  font-size: 0.9rem;
+  margin-bottom: 0;
+}
+
+footer a {
+  color: #fff;
+  text-decoration: none;
+}
+
+footer a:hover {
+  color: #ccc;
+}

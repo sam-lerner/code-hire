@@ -29,11 +29,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.use((req, res, next) => {
-  console.log(`💩 ${req.method} request received on endpoint ${req.url}`);
-  next();
-});
-
 app.use(session(sess));
 
 app.engine('handlebars', hbs.engine);

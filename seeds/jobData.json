@@ -32,6 +32,29 @@
         "user_id": 2
     },
     {
+        "title": "Pizza Guy",
+        "body" : "job description 4",
+        "salary_range": "$4",
+        "category": "category 4",
+        "location": "San Diego",
+        "user_id": 2
+    },
+    {
+        "title": "Pizza maker",
+        "body" : "job description 4",
+        "salary_range": "$4",
+        "category": "category 4",
+        "location": "San Francisco",
+        "user_id": 2
+    },   {
+        "title": "Taco enthusiast",
+        "body" : "job description 4",
+        "salary_range": "$4",
+        "category": "category 4",
+        "location": "San Francisco",
+        "user_id": 2
+    },
+    {
         "title": "job title 5",
         "body" : "job description 5",
         "salary_range": "$5",

@@ -3,6 +3,6 @@ const router = require('express').Router();
 router.get("/", (req, res) => {
   
   // fetch job data from the database using the jobId
-  res.render("partials/jobpost", );
+  res.render("apply-readMoreOfJobPost",);
 });
 module.exports = router

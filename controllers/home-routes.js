@@ -7,6 +7,24 @@ function logRoutingInfo(req,res,next) {
 }
 
 // GET data from Job table, render them through homepage.handlebar
+// router.get('/', async (req, res) => {
+//     try {
+//         const jobData = await post.findAll()
+
+//         const jobs = jobData.map((job) => 
+//             job.get({plain: true})
+//         );
+
+//         console.log(jobs);
+//         res.render('homepage', {jobs, loggedIn: req.session.loggedIn});
+//     } catch (err) {
+//         console.log(err);
+//         res.status(500).json(err);
+//     };
+// });
+
+
+
 router.get('/', logRoutingInfo, async (req, res) => {
     try {
         const jobData = await Job.findAll()
@@ -63,4 +81,4 @@ router.get('/edit',logRoutingInfo, (req, res) => {
 });
 
 
-module.exports = router;
+module.exports = router

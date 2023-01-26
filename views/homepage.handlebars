@@ -1,3 +1,9 @@
+{{!-- {{#each (slice array 0 3)}}
+
+{{/each}} --}}
+<link rel="stylesheet" href="/css/c.css">
+    {{!-- Below is a duplicate of the nav bar --}}
+    {{!-- <nav>
 
  <link rel="stylesheet" href="/css/c.css">   
 <div class="search-container">
@@ -14,16 +20,24 @@
             <li><a href="#" class="job-reviews">Job Reviews</a></li>
             {{#if loggedIn}} <li><a href="/profile" class="profile">Profile</a></li> {{/if}}
             <li><a href="#" class="all-jobs">All Jobs</a></li>
+        </ul>
+    </nav> --}}
+<div>
+    {{!-- <p>I am homepage.handlebars</p> --}}
         </ul> --}}
     </nav>
     <div class="search-container">
-        <form>
-            <input type="text" placeholder="Job Title" name="job-title">
-            <input type="text" placeholder="Location" name="location">
-            <button type="submit">Search</button>
+        <form class="job-search">
+            <input type="text" placeholder="Job Title" id="title" name="job-title">
+            <input type="text" placeholder="Location" id="location" name="location">
+            <button type="submit"  class="btn">Search</button>
         </form>
     </div>
-    <div>
+
+    <div id="search-results"></div>
+</div>
+
+    {{!-- <div>
         <h2>Job Listings</h2>
         {{#each jobsFour as |job|}}
         <div class="cards-containerj">
@@ -35,6 +49,6 @@
         </div>
         {{/each}}
 
-    </div>
-
-<script
+    </div> --}}
+</div>
+<script src="/js/job-search.js"></script>

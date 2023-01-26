@@ -4,13 +4,17 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>User Registry</title>
-<link rel="stylesheet" href="/css/jass.css">
+  <title>CodeHire | Hiring Coders!</title>
+
+  <link rel="stylesheet" href="/css/jass.css">
+  {{!-- <link rel="stylesheet" href="/css/style.css"> --}}
+
 </head>
+<body>
 <div class="top-bar">
   <div class="top-bar-left">
     <ul class="menu">
-      <li class="menu-text">CodeHire</li>
+      <a class="menu-text" href="/">CodeHire</a>
     </ul>
   </div>
   <nav class="top-bar-right">
@@ -25,17 +29,21 @@
 </div>
 <nav>
   <ul>
-    <li><a href="#" class="profile">Profile</a></li>
-    <li><a href="#" class="all-jobs">All Jobs</a></li>
+    <li><a href="/profile" class="profile">Profile</a></li>
+    <li><a href="/api/job" class="all-jobs">All Jobs</a></li>
   </ul>
 </nav>
-
+{{!-- Commented out due to search being on homepage.handlebars --}}
+{{!-- <div class="search-container">
+  <form class="job-search">
+    <input type="text" placeholder="Job Title" id='title' name="job-title">
+    <input type="text" placeholder="Location" id='location' name="location">
+    <button type="submit">Search</button>
+  </form>
+</div> --}}
 <main>
   {{{ body }}}
 </main>
-{{#if loggedIn}}
-<script src="/js/logout.js"></script>
-{{/if}}
 <footer>
     <div class="container">
       <div class="row">
@@ -43,7 +51,7 @@
           <p>@2023 CODEHIRE</p>
         </div>
         <div class="col-4">
-          <p>Creators: Sam.Lerner Connor.Bottone Justin.Yi Adam Aronson </p>
+          <p>Creators: Adam Aronson, Connor Bottone, Sam Lerner and Justin Yi </p>
         </div>
         <div class="col-4">
           <p><a href="#">Contact Us</a></p>
@@ -51,4 +59,10 @@
       </div>
     </div>
   </footer>
+{{#if loggedIn}}
+<script src="/js/logout.js"></script>
+
+{{/if}}
+{{!-- <script src="/js/job-search.js"></script> --}}
+  </body>
 </html>

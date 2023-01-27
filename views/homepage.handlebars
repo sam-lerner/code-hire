@@ -4,6 +4,18 @@
 <link rel="stylesheet" href="/css/c.css">
     {{!-- Below is a duplicate of the nav bar --}}
     {{!-- <nav>
+
+ <link rel="stylesheet" href="/css/c.css">   
+<div class="search-container">
+  {{!-- <form>
+    <input type="text" placeholder="Job Title" name="job-title">
+    <input type="text" placeholder="Location" name="location">
+    <button type="submit">Search</button>
+  </form>
+</div>
+
+<div>
+    <nav>
         <ul>
             <li><a href="#" class="job-reviews">Job Reviews</a></li>
             {{#if loggedIn}} <li><a href="/profile" class="profile">Profile</a></li> {{/if}}
@@ -12,11 +24,13 @@
     </nav> --}}
 <div>
     {{!-- <p>I am homepage.handlebars</p> --}}
+        </ul> --}}
+    </nav>
     <div class="search-container">
         <form class="job-search">
             <input type="text" placeholder="Job Title" id="title" name="job-title">
             <input type="text" placeholder="Location" id="location" name="location">
-            <button type="submit" class="btn">Search</button>
+            <button type="submit"  class="btn">Search</button>
         </form>
     </div>
 
@@ -25,7 +39,7 @@
 
     {{!-- <div>
         <h2>Job Listings</h2>
-        {{#each jobs as |job|}}
+        {{#each jobsFour as |job|}}
         <div class="cards-containerj">
             <div class="cardj">
                 <h2>{{job.title}}</h2>

@@ -1,8 +1,8 @@
   <link rel="stylesheet" href="/css/cseacrhed.css">
-{{#if results.length}}
+{{#if searchResults.length}}
 <section>
   <h2>Your results:</h2>
-{{#each results as |job|}}
+{{#each searchResults as |job|}}
 {{>jobpost job}}
   {{/each}}
   {{else}}

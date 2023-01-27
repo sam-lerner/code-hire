@@ -3,9 +3,12 @@ const { Job, User, Comment } = require('../../models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
 // const withAuth = require('../../utils/auth');
-
+function logedRoutInginfo(req,res,next) {
+console.log(`*********  ${req.method } ${req.url}`)
+next();
+};
 // GET all jobs
-router.get('/', async (req, res) => {
+router.get('/',logedRoutInginfo, async (req, res) => {
     try {
         const allJobs = await Job.findAll({
             include: [
@@ -28,7 +31,7 @@ router.get('/', async (req, res) => {
     }
 });
 
-router.get('/search', async (req, res) => {
+router.get('/search',logedRoutInginfo, async (req, res) => {
     // console.log("route search")
     // console.log(req.query)
     try {
@@ -65,10 +68,13 @@ router.get('/search', async (req, res) => {
 
             });
         }
+        
         console.log('location results are', results)
-        //   res.json(results);
+     
+        const searchResults = results.map(result => {return result.get({plain:true})})
+        console.log('resultData',searchResults)
         res.render('employeeSearchresults', {
-            results
+            searchResults
         });
     } catch (err) {
         res.status(500).json(err);
@@ -76,7 +82,7 @@ router.get('/search', async (req, res) => {
 });
 
 // GET one job
-router.get('/:id', async (req, res) => {
+router.get('/:id',logedRoutInginfo, async (req, res) => {
     try {
         const oneJob = await Job.findByPk(req.params.id, {
             include: [

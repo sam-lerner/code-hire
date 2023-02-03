@@ -47,8 +47,10 @@ try{
       return;
   }
   const jobs = jobId.get({ plain: true });
+  console.log(jobs)
   res.render('single-post', {
       jobs
+      
   });
 } catch (err) { 
   res.status(500).json(err);

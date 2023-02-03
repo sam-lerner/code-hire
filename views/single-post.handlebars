@@ -2,19 +2,19 @@
   <div class="card">
        <p>single post Please</p>
         <div class="card-body">
-          <h4 class="card-title">Company Name {{user_id}}</h4>
+          <h4 class="card-title">Company Name {{jobs.user_id}}</h4>
           <p class="card-text">Company Description</p>
           <button class="btnrm btn-primary" id="T">Read Reviews</button>
         </div>
       </div> 
     
      <div class="job-card">
-      <h2>Job Title {{title}}</h2>
+      <h2>Job Title {{jobs.title}}</h2>
       
-      <p>Job Description {{body}}</p>
-      <p>Job Location  {{location}}</p>
-      <p>Job Salary {{salary_range}}</p>
-      <p>Job Requirements {{category}}</p>
+      <p>Job Description {{jobs.body}}</p>
+      <p>Job Location  {{jobs.location}}</p>
+      <p>Job Salary {{jobs.salary_range}}</p>
+      <p>Job Requirements {{jobs.category}}</p>
   
     </div>
     <script src="/js/readReviewsbutton.js"></script>

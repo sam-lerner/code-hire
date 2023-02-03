@@ -5,7 +5,7 @@
         "salary_range": "$1",
         "category": "category 1",
         "location": "location 1",
-        "user_id": 1
+        "user_id": 10
     },
     {
         "title": "job title 2",

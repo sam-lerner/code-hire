@@ -2,8 +2,11 @@
     <div class="cardj">
       <h2>{{title}}</h2>
       <p>{{location}}</p>
+      <p>{{user_id}}</p>
+      <p>{{id}}</p>
       <p class="d">Job Description
-        <button id="h" class="apply-button">Apply</button>
+        <button id="h" onclick="onApplyButtonClick(event, {{id }})">Apply</button>
+        {{!-- <button id="h" class="apply-button">Apply</button> --}}
       </p>
     </div>
     <script src="/js/aplybutton.js"></script>

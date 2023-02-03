@@ -12,4 +12,4 @@ function onApplyButtonClick(event, jobId) {
     window.location.href = '/jobpost/' + jobId;
     console.log("clicked registered");
   }
-    ;button2.addEventListener("click",applyButton)
+    // ;button2.addEventListener("click",applyButton)

@@ -4,7 +4,8 @@
         <div class="card-body">
           <h4 class="card-title">Company Name {{jobs.user_id}}</h4>
           <p class="card-text">Company Description</p>
-          <button class="btnrm btn-primary" id="T">Read Reviews</button>
+          {{!-- <button class="btnrm btn-primary" id="T">Read Reviews</button> --}}
+          <button id="T" onclick="reviewButtonClick(event, {{jobs.id }})">Read Reviews</button>
         </div>
       </div> 
     

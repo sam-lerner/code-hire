@@ -10,6 +10,7 @@
   .review-header {
     display: flex;
     align-items: center;
+    margin-top: 200px;
   }
   
   .review-header img {
@@ -235,7 +236,7 @@ nav a.all-jobs:hover {
         margin-top: -290px;
         border: solid #0c0c0c; /* Add this line to add double style border of 5px and blue color */
     margin-left: 30px;
-        height: 400px;
+        height: 500px;
         
       }
       

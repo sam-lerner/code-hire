@@ -1,7 +1,7 @@
 const router = require('express').Router();
 const review = require('./commentR')
 const userRoutes = require('./user-routes');
-const jobpost = require('./applrroute')
+const jobpost = require('../singlePost')
 
 const loginOrCreateAcount = require('./login-createacount');
 const jobRoutes = require('./jobRoutes');

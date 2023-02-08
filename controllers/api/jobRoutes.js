@@ -64,7 +64,11 @@ router.get('/search',logedRoutInginfo, async (req, res) => {
                 where: {
 
                     location: { [Op.like]: `%${location}%` }
-                }
+                },
+                include: {
+                    model: User,
+                    attributes: ['username'],
+                },
 
             });
         }

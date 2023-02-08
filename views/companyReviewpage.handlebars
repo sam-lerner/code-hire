@@ -10,13 +10,12 @@
     <div class="carda">
     
         <div class="card-bodya">
-          <h1>{{User.username}}</h1>
-          <p>{{User.profile}}</p>
+          
           <h2>Contact Information:</h2>
           <ul>
-            <li>Address: 123 Main St, Anytown USA</li>
+            <li>{{jobs.user.username}}</li>
             <li>Phone: 555-555-5555</li>
-            <li>{{User.email}}</li>
+            <li>{{jobs.user.email}}</li>
           </ul>
           
           </div>
@@ -25,11 +24,10 @@
     <div class="cards-containerj">
        {{!-- {{#each }} --}}
         <div class="cardj">
-          <h2>{{User.username}}</h2>
+          <h2>{{jobs.comment.Position}}</h2>
           <p>Positon</p>
-          <p>{{Comment.comment}}</p>
-          <p>
-          <a href="#" class="read-button">Read more</a></p>
+          <p>{{jobs.comment.comment}}</p>
+         
         </div>
         {{!-- {{/each}} --}}
         {{!-- <div class="cardj">

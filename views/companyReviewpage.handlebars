@@ -45,16 +45,9 @@
         <label id="review" for="review">Review:</label>
           
         <input id="review" name="review" rows="4" required></input>
-      <button id="btnS" type="submit">Submit</button>
+      <button id="btnS" type="button">Submit</button>
     </div>
     </form>
 </div>
-<script> 
-  function main(){
-   document.querySelector('#new-comment').addEventListener('submit', (e) => {
-  e.jobId = req.params.id;
-  post(e);
-});
-  }
-</script>
+
 <script src="/js/submitcomment.js"></script>

@@ -6,10 +6,11 @@ const { Job, User, Comment } = require('../../models');
 const router = require('express').Router();
 
 router.post('/:id', (req, res) => {
-  
+  console.log(req.body)
+  console.log(req.params.id)
   Comment.create({
-    comment: req.body.review,
-    job_title: req.body.name,
+    comment: req.body.reviewEl,
+    job_title: req.body.nameEl,
     post_id: req.params.id,
     job_id: req.params.id,
     user_id: req.params.id,

@@ -12,7 +12,7 @@ async function post(e) {
     .querySelector('input[name="review"]')
     .value;
     console.log(reviewEl);
-        const response = await fetch(`/api/reviews/5`, {
+        const response = await fetch(`/api/reviews/:id`, {
             method: 'POST',
             body: JSON.stringify({ nameEl, reviewEl }),
             headers: { 'Content-Type': 'application/json' },

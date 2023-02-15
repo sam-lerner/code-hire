@@ -2,40 +2,81 @@
 // const {Comment} = require('../../models');
 
 //   module.exports = router
-const { Job,User,Comment } = require('../../models');
+const { Job, User, Comment } = require('../../models');
 const router = require('express').Router();
-// const {Job} = require('../../models');
-// router.get("/", (req, res) => {
-  
-//   // fetch job data from the database using the jobId
-//   res.render("companyReviewpage",);
-// });
 
+router.post('/:id', (req, res) => {
+  console.log(req.body)
+  console.log(req.params.id)
+  Comment.create({
+    comment: req.body.reviewEl,
+    job_title: req.body.nameEl,
+    post_id: req.params.id,
+    job_id: req.params.id,
+    user_id: req.params.id,
+  })
+  
+    .then(categoryDB =>
+      res.json(categoryDB))
+    .catch(err => {
+      console.log(err);
+      res.status(500).json(err);
+    });
+});
 
 router.get('/:id', async (req, res) => {
-  try{
+  try {
     const jobId = await Job.findByPk(req.params.id, {
       include: [
         {
           model: User,
-          attributes: ['username','email'],
+          attributes: ['username', 'email'],
         },
         {
-        model: Comment,
-        attributes: ['comment'],}
+          model: Comment,
+          attributes: ['comment'],
+        }
       ]
     });
     if (!jobId) {
       res.status(404).json({ message: 'No job found with this id!' });
-        return;
+      return;
     }
     const jobs = jobId.get({ plain: true });
-    console.log(jobs)
+    console.log('jobs data:', jobs)
     res.render('companyReviewpage', {
-        jobs
-        
+      jobs
+
     });
-  } catch (err) { 
+  } catch (err) {
     res.status(500).json(err);
-  }});
+  }
+});
 module.exports = router
+// const {Job} = require('../../models');
+// router.get("/", (req, res) => {
+
+//   // fetch job data from the database using the jobId
+//   res.render("companyReviewpage",);
+// });
+// router.post('/:id', (req, res) => {
+//   const commentData = {
+//     comment: req.body.comment,
+//     job_title: req.body.job_title,
+//     job_id: req.params.id,
+//     user_id: req.session.user_id,
+//   };
+
+//   Job.findByPk(req.params.id)
+//     .then(job => {
+//       return Comment.create(commentData)
+//         .then(comment => {
+//           return job.addComment(comment);
+//         });
+//     })
+//     .then(() => res.sendStatus(200))
+//     .catch(err => {
+//       console.error(err);
+//       res.status(500).json(err);
+//     });
+// });

@@ -11,21 +11,15 @@ Comment.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        post_id: {
-            type: DataTypes.INTEGER,
-            references: {
-                model: 'job',
-                key: 'id',
-            }
-        },
-        job_title: {
+        content: {
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        comment: {
-            type: DataTypes.TEXT,
-            allowNull: false,
-        },
+        // date: {
+        //     type: DataTypes.DATE,
+        //     allowNull: false,
+        //     defaultValue: DataTypes.NOW,
+        // },
         user_id: {
             type: DataTypes.INTEGER,
             allowNull: false,

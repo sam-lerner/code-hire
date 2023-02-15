@@ -44,6 +44,15 @@ body {
     border-radius: 4px;
     font-size: 16px;
   }
+
+  .search-container select{
+    padding: 12px 30px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
   
   .search-container button[type="submit"] {
     width: 100px;

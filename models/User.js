@@ -16,10 +16,13 @@ User.init(
             primaryKey: true,
             autoIncrement: true,
         },
-        username: {
+        firstName: {
             type: DataTypes.STRING,
-            allowNull: false,
-            unique: true,
+            allowNull: true,
+        },
+        lastName: {
+            type: DataTypes.STRING,
+            allowNull: true,
         },
         email: {
             type: DataTypes.STRING,
@@ -36,24 +39,40 @@ User.init(
                 len: [8],
             },
         },
-        github_link: {
+        github: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 isUrl: true,
             }
         },
-        linkedin_link: {
+        linkedin: {
             type: DataTypes.STRING,
             allowNull: true,
             validate: {
                 isUrl: true,
             }
         },
-        profile: {
+        about: {
             type: DataTypes.TEXT,
             allowNull: true,
         },
+        skills: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        // front_end: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
+        // back_end: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
+        // full_stack: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
         is_employer: {
             type: DataTypes.BOOLEAN,
         }

@@ -2,50 +2,38 @@ const router = require('express').Router();
 const { Job, User, Comment } = require('../../models');
 const Sequelize = require('sequelize');
 const Op = Sequelize.Op;
-// const withAuth = require('../../utils/auth');
-function logedRoutInginfo(req,res,next) {
-console.log(`*********  ${req.method } ${req.url}`)
-next();
-};
+const { withAuth, logRoutingInfo } = require('../../utils/helpers');
+
 // GET all jobs
-router.get('/',logedRoutInginfo, async (req, res) => {
+router.get('/',logRoutingInfo, async (req, res) => {
     try {
-        const allJobs = await Job.findAll({
-            include: [
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-            ],
-        })
-        res.status(200).json(allJobs);
+        const allJobs = await Job.findAll(
+        )
+        const jobs = allJobs.map((job) => job.get({plain: true}));
+        res.render('allJobs', {jobs, loggedIn: req.session.loggedIn});
+
     } catch (err) {
         res.status(500).json(err)
     }
 });
 
-router.get('/search',logedRoutInginfo, async (req, res) => {
+router.get('/search',logRoutingInfo, async (req, res) => {
     // console.log("route search")
     // console.log(req.query)
     try {
         // retrieve the title from the query string
         const title = req.query.title;
         const location = req.query.location;
+        const qualification = req.query.qualification;
         // query the database for jobs with matching title
         let results;
-        if (title && location) {
+        if (title && location && qualification) {
             // This will look for both title and location
             results = await Job.findAll({
                 where: {
                     title: { [Op.like]: `%${title}%` },
-                    location: { [Op.like]: `%${location}%` }
+                    location: { [Op.like]: `%${location}%` },
+                    qualification: { [Op.like]: `%${qualification}%` }
                 }
 
             });
@@ -64,11 +52,17 @@ router.get('/search',logedRoutInginfo, async (req, res) => {
                 where: {
 
                     location: { [Op.like]: `%${location}%` }
-                },
-                include: {
-                    model: User,
-                    attributes: ['username'],
-                },
+                }
+
+            });
+        }
+        else if (qualification) {
+            results = await Job.findAll({
+                where: {
+
+                    qualification: { [Op.like]: `%${qualification}%` }
+
+                }
 
             });
         }
@@ -77,7 +71,7 @@ router.get('/search',logedRoutInginfo, async (req, res) => {
      
         const searchResults = results.map(result => {return result.get({plain:true})})
         console.log('resultData',searchResults)
-        res.render('employeeSearchresults', {
+        res.render('jobsearch', {
             searchResults
         });
     } catch (err) {
@@ -85,33 +79,6 @@ router.get('/search',logedRoutInginfo, async (req, res) => {
     }
 });
 
-// GET one job
-router.get('/:id',logedRoutInginfo, async (req, res) => {
-    try {
-        const oneJob = await Job.findByPk(req.params.id, {
-            include: [
-                {
-                    model: User,
-                    attributes: ['username'],
-                },
-                {
-                    model: Comment,
-                    include: {
-                        model: User,
-                        attributes: ['username'],
-                    },
-                },
-            ],
-        })
-        if (!oneJob) {
-            res.status(404).json({ message: 'No job found with that id!' })
-            return
-        }
-        res.status(200).json(oneJob);
-    } catch (err) {
-        res.status(500).json(err);
-    }
-});
 
 
 module.exports = router;

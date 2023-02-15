@@ -1,0 +1,65 @@
+<div>
+    <div class="container">
+        <h1>{{job.title}}</h1>
+        <br>
+        <h4>Location: {{job.location}}</h4>
+        <h4>Position: {{job.qualification}}</h4>
+        <h4>Salary: {{job.salary}}</h4>
+        <br>
+        <h4>Description:</h4>
+        <p>{{job.body}}</p>
+        <br>
+        <h5>To Apply, Contact {{job.user.firstName}} {{job.user.lastName}} at <a href="mailto:{{job.user.email}}">{{job.user.email}}</a></h5>
+        <br>
+
+    </div>
+    <br>
+    <br>
+    
+    
+    {{#if loggedIn}}
+    {{#if loggedUser.is_employer}}
+    <br>
+    {{else}}
+    <h2>Comments</h2>
+      <div class="cards-containerj">
+            {{#each job.comments}}
+        <div class="cardj">
+            <h6>Posted by: {{user.firstName}} {{user.lastName}}</h6>
+            <h6>Contact: {{user.email}}</h6>
+            <h6>{{createdAt}}</h6>
+            <p>{{content}}</p>
+        </div>
+        {{/each}}
+
+        </div>
+
+        <div class="cards-containerj">
+        <div class="cardj">
+            <form class="comment-form">
+                <label for="content">Add a Comment</label>
+                <textarea class="class" id="content" rows="8" cols="70"></textarea>
+                <button type="submit">Add</button>
+            </form>
+        </div>
+        </div>
+  
+ 
+    {{/if}}
+    {{/if}}
+{{!-- 
+        <div class="cards-containerj">
+            {{#each job.comments}}
+        <div class="cardj">
+            <h6>Posted by: {{user.firstName}} {{user.lastName}}</h6>
+            <h6>Contact: {{user.email}}</h6>
+            <h6>{{createdAt}}</h6>
+            <p>{{content}}</p>
+        </div>
+        {{/each}} --}}
+  
+         </div>
+  
+</div>
+
+<script src="/js/comment.js"></script>

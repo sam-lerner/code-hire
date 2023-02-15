@@ -19,15 +19,31 @@ Job.init(
             type: DataTypes.TEXT,
             allowNull: false,
         },
-        salary_range: {
+        salary: {
             type: DataTypes.STRING,
             allowNull: false,
         },
-        category: {
-            type: DataTypes.STRING,
-            allowNull: false,
-        },
+        // category: {
+        //     type: DataTypes.STRING,
+        //     allowNull: false,
+        // },
         location: {
+            type: DataTypes.STRING,
+            allowNull: false,
+        },
+        // front_end: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
+        // back_end: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
+        // full_stack: {
+        //     type: DataTypes.TEXT,
+        //     allowNull: true,
+        // },
+        qualification: {
             type: DataTypes.STRING,
             allowNull: false,
         },

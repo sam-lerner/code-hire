@@ -1,9 +1,9 @@
 const User = require('./User');
 const Job = require('./Job');
 const Comment = require('./Comment');
-const Qualification = require('./Qualification');
-const JobQualification = require('./JobQualification');
-const UserQualification = require('./UserQualification');
+// const Qualification = require('./Qualification');
+// const JobQualification = require('./JobQualification');
+// const UserQualification = require('./UserQualification');
 
 // // Job has one user
 Job.belongsTo(User, {
@@ -11,16 +11,22 @@ Job.belongsTo(User, {
 });
 
 User.hasMany(Job, {
-    foreignKey: 'user_id'
+    foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
 // // Comments belong to both Jobs and Users
 
 Comment.belongsTo(Job, {
     foreignKey: 'job_id',
+    onDelete: 'CASCADE',
+
+
 });
 Job.hasMany(Comment, {
     foreignKey: 'job_id',
+    onDelete: 'CASCADE',
+
 });
 
 Comment.belongsTo(User, {
@@ -29,47 +35,50 @@ Comment.belongsTo(User, {
 
 User.hasMany(Comment, {
     foreignKey: 'user_id',
+    onDelete: 'CASCADE',
 });
 
 // Qualifications belong to both Users and Jobs through qualification tables
 
-User.belongsToMany(Qualification, {
-    through: {
-        model: UserQualification,
-        unique: false,
-    },
-    as: 'users_qualifications',
-});
+// User.belongsToMany(Qualification, {
+//     through: {
+//         model: UserQualification,
+//         unique: false,
+//     },
+//     as: 'users_qualifications',
+// });
 
-Qualification.belongsToMany(User, {
-    through: {
-        model: UserQualification,
-        unique: false,
-    },
-    as: 'qualifications_by_user',
-});
+// Qualification.belongsToMany(User, {
+//     through: {
+//         model: UserQualification,
+//         unique: false,
+//     },
+//     as: 'qualifications_by_user',
+// });
 
-Job.belongsToMany(Qualification, {
-    through: {
-        model: JobQualification,
-        unique: false,
-    },
-    as: 'jobs_qualifications',
-});
+// Job.belongsToMany(Qualification, {
+//     through: {
+//         model: JobQualification,
+//         unique: false,
+//     },
+//     as: 'jobs_qualifications',
+// });
 
-Qualification.belongsToMany(Job, {
-    through: {
-        model: JobQualification,
-        unique: false,
-    },
-    as: 'qualifications_by_jobs',
-});
+// Qualification.belongsToMany(Job, {
+//     through: {
+//         model: JobQualification,
+//         unique: false,
+//     },
+//     as: 'qualifications_by_jobs',
+// });
+
+
 
 module.exports = {
     User,
     Job,
     Comment,
-    Qualification,
-    JobQualification,
-    UserQualification,
+    // Qualification,
+    // JobQualification,
+    // UserQualification,
 };

@@ -3,6 +3,7 @@ const jobSearchFormHandler = async (event) => {
 
     const title = document.querySelector('#title').value.trim();
     const location = document.querySelector('#location').value.trim();
+    const qualification = document.querySelector('#qualification').value.trim();
     let queryString = '';
     if (title) {
         queryString += `title=${title}`;
@@ -12,6 +13,12 @@ const jobSearchFormHandler = async (event) => {
             queryString += '&'
         }
         queryString += `location=${location}`;
+    }
+    if (qualification) {
+        if (queryString !== '') {
+            queryString += '&'
+        }
+        queryString += `qualification=${qualification}`;
     }
     const url = `/api/job/search?${queryString}`;
     console.log(queryString)

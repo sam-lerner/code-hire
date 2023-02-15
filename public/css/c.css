@@ -46,6 +46,15 @@ body {
     border-radius: 4px;
     font-size: 16px;
   }
+
+  .search-container select{
+    padding: 12px 30px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid #ccc;
+    border-radius: 4px;
+    font-size: 16px;
+  }
   
   .search-container button[type="submit"] {
     width: 100px;
@@ -173,7 +182,7 @@ nav a.all-jobs:hover {
     margin-top: 30px;
     margin-left: -30px;
   }
-  
+
   .card {
     /* margin-top: 50px; */
 
@@ -241,4 +250,8 @@ footer a {
 
 footer a:hover {
   color: #ccc;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  text-align: center;
 }

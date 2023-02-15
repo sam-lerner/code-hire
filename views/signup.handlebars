@@ -1,0 +1,72 @@
+ <link rel="stylesheet" href="/css/profile.css">
+  <div class="container">
+      <h1>Create Account</h1>
+      <form class="signup-form">
+        {{!-- <div class="form-group"> --}}
+          <label for="create-firstName">First Name</label>
+          <input type="text" id="create-firstName" >
+        {{!-- </div> --}}
+
+        {{!-- <div class="form-group"> --}}
+          <label for="create-lastName">Last Name</label>
+          <input type="text" id="create-lastName" >
+        {{!-- </div> --}}
+        
+        {{!-- <div class="form-group"> --}}
+          <label for="create-email">Email</label>
+          <input type="text" id="create-email" >
+        {{!-- </div> --}}
+         {{!-- <div class="form-group"> --}}
+          <label for="create-password">Password</label>
+          <input type="password" id="create-password" placeholder="********">
+        {{!-- </div> --}}
+        
+            <br>
+            {{!-- <div class="form-group"> --}}
+                <label for="create-github">GitHub</label>
+                <input type="url" id="create-github">
+            {{!-- </div> --}}
+            {{!-- <div class="form-group"> --}}
+                <label for="create-linkedin">LinkedIn</label>
+                <input type="url" id="create-linkedin">
+            {{!-- </div> --}}
+            {{!-- <div class="form-group"> --}}
+              <label>Is this an Employer Account?</label>
+              {{!-- <div> --}}
+                  <input type="checkbox" id="create-is_employer">
+                  <label for="create-is_employer">Yes</label>
+              {{!-- </div> --}}
+              <label for="skills" >Skills</label>
+              <select name="skills" id="skills">
+                <option>Choose one..</option>
+                <option>N/A (Employer)</option>
+                <option>Front End</option>
+                <option>Back End</option>
+                <option>Full Stack</option>
+              </select>
+              {{!-- <div> --}}
+                  {{!-- <input type="checkbox" id="create-front_end"> --}}
+                  {{!-- <label for="create-front_end">Front End</label> --}}
+              {{!-- </div> --}}
+              {{!-- <div> --}}
+                  {{!-- <input type="checkbox" id="create-back_end"> --}}
+                  {{!-- <label for="create-back_end">Back End</label> --}}
+              {{!-- </div> --}}
+              {{!-- <div> --}}
+                  {{!-- <input type="checkbox" id="create-full_stack"> --}}
+                  {{!-- <label for="create-full_stack">Full Stack</label> --}}
+              {{!-- </div> --}}
+          {{!-- </div> --}}
+
+            {{!-- <div class="form-group"> --}}
+                <label for="about">About Me</label>
+                <textarea id="about" rows="8" cols="80"></textarea>
+            {{!-- </div> --}}
+       
+        
+        <button type="submit">Create</button>
+      </form >
+    </div>
+    </div>
+
+    <script src="./js/signup.js"></script>

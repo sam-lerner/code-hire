@@ -1,18 +1,14 @@
 const router = require('express').Router();
-const review = require('./commentR')
+
 const userRoutes = require('./user-routes');
-const jobpost = require('../singlePost')
+const profileRoutes = require('./profile-routes');
+const jobRoutes = require('./jobRoutes')
+const commentRoutes = require('./comment-routes');
 
-const loginOrCreateAcount = require('./login-createacount');
-const jobRoutes = require('./jobRoutes');
-// const profileRoutes = require('./editProfile-routes');
-
-router.use('/jobpost',jobpost)
 router.use('/users', userRoutes);
-// router.use('./edit', profileRoutes);
-router.use('/login',loginOrCreateAcount);
+router.use('/profile', profileRoutes);
 router.use('/job', jobRoutes);
-router.use('/reviews',review);
+router.use('/comment', commentRoutes);
 
 
 module.exports = router;

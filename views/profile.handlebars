@@ -1,0 +1,86 @@
+{{#if loggedIn}}
+{{#if user.is_employer}}
+<div class="review-container">
+    <h1>{{user.firstName}} {{user.lastName}}'s Profile</h1>
+    <a href="mailto:{{user.email}}">
+        <h4>Email: {{user.email}}</h4>
+    </a>
+    <a href="https://github.com/" +"{{user.github}}" target="_blank">
+        <h4>GitHub: {{user.github}}</h4>
+    </a>
+    <a href="https://www.linkedin.com/in/" +"{{user.linkedin}}" target="_blank">
+        <h4>LinkedIn: {{user.linkedin}}</h4>
+    </a>
+
+
+    <br>
+    <h2>My Postings:</h2>
+    {{#each users.jobs}}
+    <div class="cards-containerj">
+        <div class="cardj">
+            <a href="/job/{{id}}">
+                <h4>{{title}}</h4>
+                <p>{{location}}</p>
+                <p>{{salary}}</p>
+            </a>
+            <button class="delete-btn" id="delete-job" data-value="{{id}}">Delete</button>
+            {{!-- <form class="delete"> --}}
+                {{!-- <button class="delete" id="delete-btn" value="{{id}}">Delete</button> --}}
+                {{!-- </form> --}}
+        </div>
+    </div>
+    {{/each}}
+    <div class="cards-containerj" id="add-job">
+        <div class="cardj">
+            <form class="job-form">
+                <label for="title">Job Title:</label>
+                <input type="text" id="title">
+                <br>
+                <label for="location">Location:</label>
+                <input type="text" id="location">
+                <br>
+                <label for="salary">Salary:</label>
+                <input type="text" id="salary">
+                <br>
+                <label for="body">Job Description:</label>
+                <textarea class="class" id="body" rows="8" cols="70"></textarea>
+                <br>
+                <label for="qualification">Looking for:</label>
+                <select name="qualification" id="qualification">
+                    <option>Choose One..</option>
+                    <option>Front End</option>
+                    <option>Back End</option>
+                    <option>Full Stack</option>
+                </select>
+                <button type="submit">Post</button>
+            </form>
+        </div>
+    </div>
+
+</div>
+{{!--
+<script src="/js/deleteJob.js"></script> --}}
+<script src="/js/addJob.js"></script>
+<script src="/js/deleteJob.js"></script>
+{{else}}
+<div class="review-container">
+    <h1>{{user.firstName}} {{user.lastName}}'s Profile</h1>
+    <a href="mailto:{{user.email}}">
+        <h4>Email: {{user.email}}</h4>
+    </a>
+    <a href="https://github.com/" +"{{user.github}}" target="_blank">
+        <h4>GitHub: {{user.github}}</h4>
+    </a>
+    <a href="https://www.linkedin.com/in/" +"{{user.linkedin}}" target="_blank">
+        <h4>LinkedIn: {{user.linkedin}}</h4>
+    </a>
+    <h4>Skills: {{user.skills}}</h4>
+
+    <br>
+    <h4>About:</h4>
+    <p id="profile-about">{{user.about}}</p>
+    <div class="review-header">
+    </div>
+    {{/if}}
+
+    {{/if}}

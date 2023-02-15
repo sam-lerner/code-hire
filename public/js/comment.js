@@ -1,35 +1,27 @@
-async function commentFormHandler(event) {
-    event.preventDefault();
+const commentFormHandler = async (event) => {
+  event.preventDefault();
   
-    const comment = document
-      .querySelector('input[name="comment"]')
-      .value.trim();
+  const content = document.querySelector('#content').value.trim();
+  const job_id = window.location.toString().split('/')[window.location.toString().split('/').length - 1];
+
   
-    const job_id = window.location.toString().split('/')[
-      window.location.toString().split('/').length - 1
-    ];
-  
-    if (comment) {
+
+  if (content) {
       const response = await fetch('/api/comment', {
-        method: 'POST',
-        body: JSON.stringify({
-          job_id,
-          comment,
-        }),
-        headers: {
-          'Content-Type': 'application/json',
-        },
+          method: "POST",
+          body: JSON.stringify({content, job_id}),
+          headers: {"Content-Type" : "application/json"},
       });
-  
-      if (response.ok) {
-        document.location.reload();
+
+      if(response.ok) {
+          document.location.reload();
       } else {
-        alert(response.statusText);
-        document.querySelector('#comment-form').style.display = 'block';
+          console.log(job_id);
+          console.log(typeof job_id);
+          alert('failed to comment');
       }
-    }
   }
-  
-  document
-    .querySelector('.comment-form')
-    .addEventListener('submit', commentFormHandler);
+}
+
+
+document.querySelector('.comment-form').addEventListener('submit', commentFormHandler);
